@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="snakeApp">
 
 <head>
+    <!--Style Sheets-->
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/homePage.css">
+    <link rel="stylesheet" href="css/canvas.css">
     <meta charset="UTF-8">
-    <title>Snake</title>
+    <title>Snake Bytes</title>
 </head>
 
 <body>
-    <canvas></canvas>
+    <!--Page Header-->
+    <div class="header"> SNAKE BYTES</div>
+    
+    <!--Main Menu-->
+    <div class="mainMenu"> MENU
+        <div class="login"> LOGIN </div>
+        <div class="options"> OPTIONS </div>
+        <div class="help"> HELP </div>
+    </div>
+
+    <!--Score Board-->
+    <div class="scoreBoard"> TOP SCORES
+        <div class="topScores"> top scores to appear here</div>
+    </div>
+    <div class="canvas">
+        <canvas></canvas>
+    </div>
+    
+    <!--Script Sources-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
     <script src="js/canvas.js"></script>
+    <script src="js/menuBar.js"></script>
 </body>
 
 </html>

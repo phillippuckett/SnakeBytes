@@ -21,7 +21,7 @@ var KEY_DOWN = 40;
 
 /** Game objects */
 var canvas;	  /* HTMLCanvas */
-var ctx;	  /* CanvasRenderingContext2d */
+var context;	  /* CanvasRenderingContext2d */
 var keystate; /* Object, used for keyboard inputs */
 var frames;   /* number, used for animation */
 var score;	  /* number, keep track of the player score */
@@ -126,12 +126,12 @@ var main = function () {
     canvas = document.createElement("canvas");
     canvas.width = COLS * 15;
     canvas.height = ROWS * 15;
-    ctx = canvas.getContext("2d");
+    context = canvas.getContext("2d");
     
     /** add the canvas element to the body of the document */
     document.body.appendChild(canvas);
     // sets an base font for bigger score display
-    ctx.font = "12px Helvetica";
+    context.font = "12px Helvetica";
     frames = 0;
     keystate = {};
     
@@ -246,25 +246,25 @@ var draw = function () {
     for (var x = 0; x < grid.width; x++) {
         for (var y = 0; y < grid.height; y++) {
             
-            /** sets the fillstyle depending on the id of each cell */
+            /** sets the color of the fillstyle depending on the id of each cell */
             switch (grid.get(x, y)) {
                 case EMPTY:
-                    ctx.fillStyle = "darkgreen";
+                    context.fillStyle = "black";
                     break;
                 case SNAKE:
-                    ctx.fillStyle = "royalblue";
+                    context.fillStyle = "royalblue";
                     break;
                 case FRUIT:
-                    ctx.fillStyle = "darkred";
+                    context.fillStyle = "darkred";
                     break;
             }
-            ctx.fillRect(x * tw, y * th, tw, th);
+            context.fillRect(x * tw, y * th, tw, th);
         }
     }
     
     /** changes the fillstyle once more and draws the score message to the canvas */
-    ctx.fillStyle = "#000";
-    ctx.fillText("SCORE: " + score, 10, canvas.height - 10);
+    context.fillStyle = "#000";
+    context.fillText("SCORE: " + score, 10, canvas.height - 10);
 }
 
 /** start and run the game */

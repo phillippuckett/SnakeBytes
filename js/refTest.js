@@ -1,5 +1,5 @@
 var x = function () {
-    // alert("Reference test successful");
+    console.log("Reference test successful");
 };
 x();
 

@@ -1,11 +1,33 @@
 html, body {
-    background-img: "img/junglesnakeab1.jpg";
+    /*http://www.w3schools.com/cssref/css3_pr_background-size.asp*/
+    font-family: 'Slackey', cursive;
+    background-image: url("img/trees_wood_jungle_moss_stones_green_branches_roots_8971_3840x2160.jpg");
+    background-size: cover;
+}
+
+.canvas {
+    /*block*/
+    /*border: 1px solid white;*/
+    /*opacity: .5;*/
+    height: 375px;
+    width: 375px;
+    position: absolute;
+    margin: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
 }
 
 canvas {
+    /*block*/
+    /*border: 1px solid white;*/
+    background-color: black;
+    opacity: .65;
+    height: 375px;
+    width: 375px;
     display: block;
 	position: absolute;
-	border: 1px solid saddlebrown;
 	margin: auto;
 	top: 0;
 	bottom: 0;
