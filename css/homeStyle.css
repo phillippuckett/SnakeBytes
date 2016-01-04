@@ -1,12 +1,13 @@
 .header {
-    /*header text*/
-    color: white;
-    background-color: black;
-    opacity: .75;    
+    /*text*/
+    color: white;  
     font-size: 40px;
     text-align: center;
+    
     /*block*/
     border: 1px solid white;
+    background-color: black;
+    opacity: .75;  
     padding: .5%;
     
 }
@@ -20,6 +21,7 @@
     border: 1px solid white;
     background-color: black;
     opacity: .5;
+    /*position: relative;*/
     float: left;
     height: 400px;
     width: 300px;
@@ -40,7 +42,7 @@
         }
 
 .scoreBoard {    
-    /*scoreBoard header-text*/
+    /*text*/
     color: white;
     font-size: 25px; 
     text-align: center;
@@ -49,6 +51,7 @@
     border: 1px solid white;
     background-color: black;
     opacity: .5;
+    /*position: relative;*/
     float: right;
     height: 400px;
     width: 300px;
@@ -60,7 +63,7 @@
         /*border: 1px solid white;*/
         height: 95%;
         
-        /*topScores text*/
+        /*text*/
         color: white;
         font-size: 15px;
     

@@ -270,5 +270,14 @@ var draw = function () {
 /** start and run the game */
 main();
 
+/* // The function used -through jQuery to reference a JS files within another JS files //
 $.getScript("refTest.js", function () {
-});
+    
+    var x = function () {
+    console.log("Reference test successful");
+};
+x();
+
+// http://stackoverflow.com/questions/950087/include-a-javascript-file-in-another-javascript-file
+    
+});*/
