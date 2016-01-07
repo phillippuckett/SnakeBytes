@@ -1,36 +1,31 @@
-html, body {
-    /*http://www.w3schools.com/cssref/css3_pr_background-size.asp*/
+body {
     font-family: 'Slackey', cursive;
-    background-image: url("img/trees_wood_jungle_moss_stones_green_branches_roots_8971_3840x2160.jpg");
+    /*background-image: url("img/trees_wood_jungle_moss_stones_green_branches_roots_8971_3840x2160.jpg");*/
+    background-color: dodgerblue;
     background-size: cover;
+    max-width: 550px;
+    padding: 1px 0;
+    padding-top: 0;
 }
 
-.canvas {
+.pageTitle {
+    /*text*/
+    color: white;  
+    font-size: 40px;
+    text-align: center;
     /*block*/
-    /*border: 1px solid white;*/
-    /*opacity: .1;*/
-    height: 375px;
-    width: 375px;
-    position: absolute;
-    margin: auto;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
+    border: 1px solid white;
+    /*background-image: url("img/trees_wood_jungle_moss_stones_green_branches_roots_8971_3840x2160.jpg"); background-size: cover; opacity: .75;*/
+    background-color: darkgreen;
+    min-width: 375px; 
+    padding: .1%;
 }
 
 canvas {
     /*block*/
-    /*border: 1px solid white;*/
-    background-color: black;
-    opacity: .65;
-    height: 375px;
-    width: 375px;
-    display: block;
-	position: absolute;
-	margin: auto;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
+    border: 1px solid white;
+    /*opacity: .85;*/
+    min-height: 385px; height: 100%; max-height: 550px;
+    min-width: 385px; width: 100%; max-width: 550px;
+    margin: .5% .25%; float: left;
 }

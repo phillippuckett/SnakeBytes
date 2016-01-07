@@ -1,32 +1,32 @@
 /** Here we will declare our variables */
-        
-/** constants */
+// CONSTANTS //
 var COLS = 25;
 var ROWS = 25;
 var EMPTY = 0;
 var SNAKE = 1;
 var FRUIT = 2;
 
-/** directions */
+// DIRECTIONS //
 var LEFT = 0;
 var UP = 1;
 var RIGHT = 2;
 var DOWN = 3;
 
-/** keys */
+// KEYS //
 var KEY_LEFT = 37;
 var KEY_UP = 38;
 var KEY_RIGHT = 39;
 var KEY_DOWN = 40;
 
-/** Game objects */
+// GAME OBJECTS //
 var canvas;	  /* HTMLCanvas */
 var context;	  /* CanvasRenderingContext2d */
 var keystate; /* Object, used for keyboard inputs */
 var frames;   /* number, used for animation */
 var score;	  /* number, keep track of the player score */
 
-/** Grid datastructor, usefull in games where the game world is
+// THE GRID //
+/** Grid datastructure, usefull in games where the game world is
  * confined in absolute sized chunks of data or information.
  * @type {Object}*/
 var grid = {
@@ -71,6 +71,7 @@ var grid = {
  * with all the current positions in the grid with the snake id
  * @type {Object}*/
 
+// THE SNAKE //
 var snake = {
     direction: null, /* number, the direction */
     last: null,		 /* Object, pointer to the last element in the queue */
@@ -135,7 +136,7 @@ var main = function () {
     frames = 0;
     keystate = {};
     
-    /** keeps track of the keybourd input */
+    /** keeps track of the keyboard input */
     document.addEventListener("keydown", function (evt) {
         keystate[evt.keyCode] = true;
     });
