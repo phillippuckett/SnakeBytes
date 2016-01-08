@@ -108,6 +108,8 @@ var snake = {
         return this._queue.pop();
     }
 };
+
+// SETTING THE FOOD //
 /** Set a food id at a random free cell in the grid*/
 var setFood = function () {
     var empty = [];
@@ -125,6 +127,7 @@ var setFood = function () {
     grid.set(FRUIT, randpos.x, randpos.y);
 }
 
+// START GAME //
 /** Starts the game*/
 var main = function () {
     
@@ -136,7 +139,7 @@ var main = function () {
     
     /** add the canvas element to the body of the document */
     document.body.appendChild(canvas);
-    // sets an base font for bigger score display
+    // sets a base font for bigger score display
     context.font = "12px Slackey";
     frames = 0;
     keystate = {};
@@ -154,6 +157,7 @@ var main = function () {
     loop();
 }
 
+// GAME RESTART //
 /** Resets and inits game objects*/
 var init = function () {
     score = 0;

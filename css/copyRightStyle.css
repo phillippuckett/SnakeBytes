@@ -1,0 +1,10 @@
+.directiveFooter {
+	/*outline: 1px solid red;*/
+	color: orangered;
+	/*text-align: center;*/
+	position: fixed; 
+	bottom: 0;
+	width: 100%;
+	padding: 1%;
+	text-shadow: 0 0 15px orange;
+}
