@@ -259,7 +259,7 @@ var draw = function () {
             /** sets the color of the fillstyle depending on the id of each cell */
             switch (grid.get(x, y)) {
                 case EMPTY:
-                    context.fillStyle = "black";
+                    context.fillStyle = "darkgreen";
                     break;
                 case SNAKE:
                     context.fillStyle = "darkorange";

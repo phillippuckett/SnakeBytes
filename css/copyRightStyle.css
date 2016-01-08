@@ -1,10 +1,11 @@
-.directiveFooter {
-	/*outline: 1px solid red;*/
-	color: orangered;
-	/*text-align: center;*/
+.directive-footer {
+	color: darkorange;
+    font-size: 10px;
+	text-align: center;
 	position: fixed; 
 	bottom: 0;
 	width: 100%;
-	padding: 1%;
-	text-shadow: 0 0 15px orange;
+    height: 15px;
+	/*text-shadow: 0 0 15px white;*/
+    opacity: .5;
 }
