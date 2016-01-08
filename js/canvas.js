@@ -1,3 +1,8 @@
+// $("#startButton").click(function () {
+//     $("#startScreen").hide();
+//     $("#canvas").show();
+// });
+
 /** Here we will declare our variables */
 // CONSTANTS //
 var COLS = 25;
@@ -13,10 +18,10 @@ var RIGHT = 2;
 var DOWN = 3;
 
 // KEYS //
-var KEY_LEFT = 37;
-var KEY_UP = 38;
-var KEY_RIGHT = 39;
-var KEY_DOWN = 40;
+var KEY_LEFT = 65 && 37;
+var KEY_UP = 87 && 38;
+var KEY_RIGHT = 68 && 39;
+var KEY_DOWN = 83 && 40;
 
 // GAME OBJECTS //
 var canvas;	  /* HTMLCanvas */
@@ -132,7 +137,7 @@ var main = function () {
     /** add the canvas element to the body of the document */
     document.body.appendChild(canvas);
     // sets an base font for bigger score display
-    context.font = "12px Helvetica";
+    context.font = "12px Slackey";
     frames = 0;
     keystate = {};
     
@@ -253,7 +258,7 @@ var draw = function () {
                     context.fillStyle = "black";
                     break;
                 case SNAKE:
-                    context.fillStyle = "royalblue";
+                    context.fillStyle = "darkorange";
                     break;
                 case FRUIT:
                     context.fillStyle = "darkred";
@@ -263,22 +268,12 @@ var draw = function () {
         }
     }
     
-    /** changes the fillstyle once more and draws the score message to the canvas */
-    context.fillStyle = "#000";
+    /** changes the fillstyle once more and draws the SCORE message to the canvas */
+    context.fillStyle = "darkorange";
     context.fillText("SCORE: " + score, 10, canvas.height - 10);
 }
 
 /** start and run the game */
-main();
-
-/* // The function used -through jQuery to reference a JS files within another JS files //
-$.getScript("refTest.js", function () {
-    
-    var x = function () {
-    console.log("Reference test successful");
-};
-x();
-
-// http://stackoverflow.com/questions/950087/include-a-javascript-file-in-another-javascript-file
-    
-});*/
+var startGame = function () {
+    main();
+}

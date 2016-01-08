@@ -1,31 +1,28 @@
 body {
     font-family: 'Slackey', cursive;
-    /*background-image: url("img/trees_wood_jungle_moss_stones_green_branches_roots_8971_3840x2160.jpg");*/
-    background-color: dodgerblue;
+    background-color: darkgreen;
     background-size: cover;
-    max-width: 550px;
     padding: 1px 0;
     padding-top: 0;
 }
 
 .pageTitle {
     /*text*/
-    color: white;  
+    color: darkorange;  
     font-size: 40px;
     text-align: center;
     /*block*/
-    border: 1px solid white;
-    /*background-image: url("img/trees_wood_jungle_moss_stones_green_branches_roots_8971_3840x2160.jpg"); background-size: cover; opacity: .75;*/
-    background-color: darkgreen;
-    min-width: 375px; 
+    border: 1px solid darkorange;
+    background-color: darkgreen
+    ;
+    min-width: 200px; width: 100%; max-width: 2000px;
     padding: .1%;
 }
 
 canvas {
     /*block*/
-    border: 1px solid white;
-    /*opacity: .85;*/
-    min-height: 385px; height: 100%; max-height: 550px;
-    min-width: 385px; width: 100%; max-width: 550px;
+    border: 1px solid darkorange;
+    min-height: 200px; height: 100%; max-height: 2000px;
+    min-width: 200px; width: 100%; max-width: 2000px;
     margin: .5% .25%; float: left;
 }
