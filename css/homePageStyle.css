@@ -30,10 +30,7 @@
     position: relative;
     margin: auto;
 }
-
-.startButton:hover {
-    background: orangered;
-}
+.startButton:hover {background: orangered;}
 
 .options{
     border: 1px solid darkorange;
@@ -47,9 +44,9 @@
     text-align: center;
     position: relative;
     margin: auto;
-    
 }
-
-.options a href:hover {
-    background: orangered;
-}
+.options:hover {background: orangered;}
+.options a:link {color: orange; text-decoration: none;}
+.options a:visited {color: orange; text-decoration: none;}
+.options a:hover {color: orange; text-decoration: none;}
+.options a:link {color: orange; text-decoration: none;}
