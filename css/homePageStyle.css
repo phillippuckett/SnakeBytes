@@ -1,12 +1,12 @@
-.homePage {
+.startMenu {  
     border: 1px solid darkorange;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
     background-color: midnightblue;
     color: darkorange;
     text-align: center;
-    font-size: 40px;
-    min-height: 300px; max-height: 400px;
+    font-size: 36px;
+    min-height: 200px; max-height: 250px;
     min-width: 200px; max-width: 300px;
     position: fixed;
     margin: auto;
@@ -29,6 +29,7 @@
     text-align: center;
     position: relative;
     margin: auto;
+    top: 25%;
 }
 .startButton:hover {background: orangered;}
 

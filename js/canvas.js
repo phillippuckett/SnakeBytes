@@ -1,8 +1,3 @@
-// $("#startButton").click(function () {
-//     $("#startScreen").hide();
-//     $("#canvas").show();
-// });
-
 /** Here we will declare our variables */
 // CONSTANTS //
 var COLS = 25;
