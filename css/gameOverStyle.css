@@ -1,11 +1,11 @@
 .gameOverButton {
-    border: 1px solid rebeccapurple;
+    border: 1px solid midnightblue;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.8);
-    color: rebeccapurple;
+    color: midnightblue;
     font-size: 25px;
     font-family: 'Slackey', cursive;
-    height: 50px;
+    height: 40px;
     min-width: 175px; width: 100%; max-width: 200px;
     text-align: center;
     position: fixed;

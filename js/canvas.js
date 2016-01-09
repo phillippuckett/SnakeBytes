@@ -137,10 +137,11 @@ var main = function () {
     canvas.height = ROWS * 15;
     context = canvas.getContext("2d");
     
+// SCORE FONT //    
     /** add the canvas element to the body of the document */
     document.body.appendChild(canvas);
     // sets a base font for bigger score display
-    context.font = "12px Slackey";
+    context.font = "10px Slackey";
     frames = 0;
     keystate = {};
     
@@ -158,7 +159,7 @@ var main = function () {
 }
 
 // GAME RESTART //
-/** Resets and inits game objects*/
+/** Resets and initiates game objects*/
 var init = function () {
     score = 0;
     grid.init(EMPTY, COLS, ROWS);
