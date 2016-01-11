@@ -1,18 +1,23 @@
-.gamePlay {  
-    border: 1px solid hotpink;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    background-color: darkred;
-    color: hotpink;
-    text-align: center;
-    font-size: 36px;
-    min-height: 200px; max-height: 250px;
-    min-width: 200px; max-width: 300px;
-    position: fixed;
-    margin: auto;
-    top: 5%;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    
+canvas {
+    min-height: 200px; height: 100%; max-height: 2000px;
+    min-width: 200px; width: 100%; max-width: 2000px;
+    margin: .5% .25%; float: left;
+    box-shadow: 0px 0px 5px 5px darkgreen;
+    border-radius: 5px;
 }
+
+.homeButton {
+    border: 1px solid orange;
+    border-radius: 10px;
+    background-color: midnightblue;
+    color: orange;
+    font-size: 20px;
+    font-family: 'Slackey', cursive;
+    height: 25px;
+    text-align: center;
+    margin: auto; top: 0; bottom: 10%;  
+}
+.homeButton:link {color: orange; border: 1px solid orange; text-decoration: none;}
+.homeButton:visited {color: orange; border: 1px solid orange; text-decoration: none;}
+.homeButton:hover {color: orangered; border: 1px solid orangered; text-decoration: none;}
+.homeButton:link {color: orange; border: 1px solid orange; text-decoration: none;}

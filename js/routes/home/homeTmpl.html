@@ -1,4 +1,10 @@
 <div id="homePage">
+    <!--Stop Game Function-->
+    <script>
+        var stopGame = function () {
+            
+        }
+    </script>
     <div class="startMenu">{{homeHeader}}
         <a href="/#/home">
             <br>
@@ -7,24 +13,24 @@
             <div>
                 <a href="/#/gameplay">
                     <button class="startButton" ng-click="toggle()" onClick="startGame();">{{startGame}}</button>
+
+                    <!--Start Game Function-->
+                    <script>
+                        var startGame = function () {
+                    main();
+                    console.log("startGame Running");
+                }
+                    </script>
                 </a>
             </div>
-
             <br>
+            
             <!--Options Button-->
             <div>
                 <a href="/#/options">
                     <button class="optionsButton" ng-click="toggle();">{{options}}</button>
                 </a>
             </div>
-
-            <!--Start Game Function-->
-            <script>
-                var startGame = function () {
-                    main();
-                    console.log("startGame Running");
-                }
-            </script>
         </a>
     </div>
 </div>

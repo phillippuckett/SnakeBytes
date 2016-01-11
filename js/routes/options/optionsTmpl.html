@@ -2,6 +2,13 @@
     <div class="optionsMenu">{{header}}
         <div class="toggleMusic">{{toggleMusic}}</div>
         <div class="toggleSound">{{toggleSound}}</div>
-        <div class="backButton" type="submit"><a href="/#/home">BACK</button>
+        <div class="applyButton" type="submit"><a href="/#/home">APPLY</div> 
+        <div class="backButton" onclick="goHome()">HOME
+            <script>
+                var goHome = function () {
+                    window.history.back();
+                };
+            </script>
+        </div>
     </div>
 </div>

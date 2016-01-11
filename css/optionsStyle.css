@@ -17,10 +17,10 @@
 }
 
 .toggleMusic {
-    border: 1px solid darkorange;
+    border: 1px solid midnightblue;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
-    color: orange;
+    color: midnightblue;
     font-size: 25px;
     font-family: 'Slackey', cursive;
     height: 35px;
@@ -30,14 +30,14 @@
     margin: 5% 25%;
 }
 .toggleMusic:hover {
-    background: orangered;
+    color: orangered; border: 1px solid orangered;
 }
 
 .toggleSound {
-    border: 1px solid darkorange;
+    border: 1px solid midnightblue;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
-    color: orange;
+    color: midnightblue;
     font-size: 25px;
     font-family: 'Slackey', cursive;
     height: 35px;
@@ -45,9 +45,28 @@
     text-align: center;
     margin: 5% 25%;
 }
+
 .toggleSound:hover {
-background: orangered;
+    color: orangered; border: 1px solid orangered;
 }
+
+.applyButton a{
+    border: 1px solid orange;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 25px;
+    font-family: 'Slackey', cursive;
+    height: 35px;
+    width: 125px;
+    text-align: center;
+    position: relative;
+    margin: 5% 5% 0 0;
+    float: right;
+}
+.applyButton a:link {color: orange; border: 1px solid orange; text-decoration: none;}
+.applyButton a:visited {color: orange; border: 1px solid orange; text-decoration: none;}
+.applyButton a:hover {color: orangered; border: 1px solid orangered; text-decoration: none;}
+.applyButton a:link {color: orange; border: 1px solid orange; text-decoration: none;}
 
 .backButton {
     border: 1px solid darkorange;
@@ -57,12 +76,12 @@ background: orangered;
     font-size: 25px;
     font-family: 'Slackey', cursive;
     height: 35px;
-    width: 150px;
+    width: 125px;
     text-align: center;
-    position: relative;
-    margin: 5% 25%;
+    margin: 5% 0 0 5%;
+    float: left;
 }
-.backButton a:link {color: orange; text-decoration: none;}
-.backButton a:visited {color: orange; text-decoration: none;}
-.backButton a:hover {color: darkorange; text-decoration: none;}
-.backButton a:link {color: orange; text-decoration: none;}
+.backButton:link {color: orange; border: 1px solid orange; text-decoration: none;}
+.backButton:visited {color: orange; border: 1px solid orange; text-decoration: none;}
+.backButton:hover {color: orangered; border: 1px solid orangered; text-decoration: none;}
+.backButton:link {color: orange; border: 1px solid orange; text-decoration: none;}

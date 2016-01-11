@@ -1,3 +1,10 @@
+body {
+    font-family: 'Slackey', cursive;
+    /*background-color: black;*/
+    background-size: cover;
+    padding: 1%;
+}
+
 .startMenu {  
     border: 1px solid darkorange;
     border-radius: 10px;
@@ -31,7 +38,7 @@
     margin: auto;
     top: 25%;
 }
-.startButton:hover {background: orangered;}
+.startButton:hover {color: orangered; border: 1px solid orangered;}
 
 .optionsButton {
     border: 1px solid darkorange;
@@ -46,8 +53,4 @@
     position: relative;
     margin: auto;
 }
-.optionsButton:hover {background: orangered;}
-.options a:link {color: orange; text-decoration: none;}
-.options a:visited {color: orange; text-decoration: none;}
-.options a:hover {color: orange; text-decoration: none;}
-.options a:link {color: orange; text-decoration: none;}
+.optionsButton:hover {color: orangered; border: 1px solid orangered;}
