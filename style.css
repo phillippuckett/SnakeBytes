@@ -1,6 +1,6 @@
 body {
     font-family: 'Slackey', cursive;
-    background-color: black;
+    /*background-color: black;*/
     background-size: cover;
     padding: 1%;
 }
@@ -10,4 +10,5 @@ canvas {
     min-width: 200px; width: 100%; max-width: 2000px;
     margin: .5% .25%; float: left;
     box-shadow: 0px 0px 5px 5px darkgreen;
+    border-radius: 5px;
 }

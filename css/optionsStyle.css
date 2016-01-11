@@ -1,0 +1,68 @@
+.optionsMenu {  
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    background-color: midnightblue;
+    color: darkorange;
+    text-align: center;
+    font-size: 36px;
+    min-height: 200px; max-height: 250px;
+    min-width: 200px; max-width: 300px;
+    position: fixed;
+    margin: auto;
+    top: 5%;
+    right: 0;
+    bottom: 0;
+    left: 0; 
+}
+
+.toggleMusic {
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: orange;
+    font-size: 25px;
+    font-family: 'Slackey', cursive;
+    height: 35px;
+    width: 150px;
+    text-align: center;
+    position: relative;
+    margin: 5% 25%;
+}
+.toggleMusic:hover {
+    background: orangered;
+}
+
+.toggleSound {
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: orange;
+    font-size: 25px;
+    font-family: 'Slackey', cursive;
+    height: 35px;
+    width: 150px;
+    text-align: center;
+    margin: 5% 25%;
+}
+.toggleSound:hover {
+background: orangered;
+}
+
+.backButton {
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: orange;
+    font-size: 25px;
+    font-family: 'Slackey', cursive;
+    height: 35px;
+    width: 150px;
+    text-align: center;
+    position: relative;
+    margin: 5% 25%;
+}
+.backButton a:link {color: orange; text-decoration: none;}
+.backButton a:visited {color: orange; text-decoration: none;}
+.backButton a:hover {color: darkorange; text-decoration: none;}
+.backButton a:link {color: orange; text-decoration: none;}

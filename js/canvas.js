@@ -273,7 +273,9 @@ var draw = function () {
     context.fillText("SCORE: " + score, 10, canvas.height - 10);
 }
 
-/** start and run the game */
-var startGame = function () {
-    main();
-}
+// /** start and run the game */
+// var startGame = function () {
+//     main();
+// }
+/** pause the game */
+var pauseGame = function () {}

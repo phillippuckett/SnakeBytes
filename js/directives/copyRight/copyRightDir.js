@@ -7,7 +7,6 @@ angular.module('snakeBytes')
                 console.log("CopyRightDirCtrl Running");
                 var currentDate = new Date().getFullYear();
                 $scope.date = currentDate.toString();
-                console.log($scope.date);
             }
         }
     });

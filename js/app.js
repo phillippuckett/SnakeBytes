@@ -2,21 +2,26 @@ var snakeBytes = angular.module('snakeBytes', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {
-                url: '/',
-                templateUrl: 'js/directives/start/startTmpl.html',
-                controller: ''
+                url: '/home',
+                templateUrl: 'js/routes/home/homeTmpl.html',
+                controller: 'homeCtrl'
+            })
+            .state('game', {
+                url: '/gameplay',
+                templateUrl: 'js/routes/game/gameTmpl.html',
+                controller: 'gameCtrl'
             })
             .state('options', {
                 url: '/options',
-                templateUrl: '',
-                controller: ''
+                templateUrl: 'js/routes/options/optionsTmpl.html',
+                controller: 'optionsCtrl'
             })
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/home');
     });
     
 // Requirements
-// At least 3 routes
-// At least 2 directives
+// 2/3 routes
+// 1/2 directives
 // 1 directive can be just a templateUrl for code re-use
 // 1 directive needs to do some javascript (event if it's just elem.css({}) in the link function)
 // [Bonus] Use Firebase or an API

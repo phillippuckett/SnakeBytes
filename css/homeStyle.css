@@ -33,7 +33,7 @@
 }
 .startButton:hover {background: orangered;}
 
-.options{
+.optionsButton {
     border: 1px solid darkorange;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
@@ -46,7 +46,7 @@
     position: relative;
     margin: auto;
 }
-.options:hover {background: orangered;}
+.optionsButton:hover {background: orangered;}
 .options a:link {color: orange; text-decoration: none;}
 .options a:visited {color: orange; text-decoration: none;}
 .options a:hover {color: orange; text-decoration: none;}
