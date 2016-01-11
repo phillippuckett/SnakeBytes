@@ -132,7 +132,7 @@ var main = function () {
     canvas.height = ROWS * 15;
     context = canvas.getContext("2d");
     
-// SCORE FONT //    
+    // SCORE FONT //    
     /** add the canvas element to the body of the document */
     document.body.appendChild(canvas);
     // sets a base font for bigger score display
@@ -214,11 +214,13 @@ var update = function () {
                 break;
         }
         
+        // GAME OVER //
         /** checks all gameover conditions */
         if (0 > nx || nx > grid.width - 1 ||
             0 > ny || ny > grid.height - 1 ||
             grid.get(nx, ny) === SNAKE
             ) {
+            return console.log("Game Over");
             return init();
         }
         
