@@ -31,11 +31,11 @@ var pauseGame = false;
 
 var pause = function () {
     if (pauseGame === true) {
-        console.log("Keystate 'P' Running; PAUSE");
+        console.log("Keystate 'P' Running; PAUSE", pauseGame);
     }
     setInterval(function () {
         if (keystate[79]) {
-            console.log("Keystate 'O' Running; RESUME");
+            console.log("Keystate 'O' Running; RESUME", pauseGame);
             pauseGame = false;
         }
     }, 1);
@@ -47,18 +47,12 @@ var quitGame = false;
 
 var quit = function () {
     if (quitGame === true) {
-        console.log("Keystate 'Esc' Running; QUIT");
+        console.log("Keystate 'Esc' Running; QUIT", quitGame);
     }
 };
 
 // GAME OVER //
-var gameOverPauseGame = false;
-
-var gameOver = function () {
-    if (gameOverPauseGame === true) {
-        console.log("GameOver Function Running; GAMEOVER");
-    }
-};
+var gameOver = false;
 
 // GAME OBJECTS //
 var canvas;	  /* HTMLCanvas */
@@ -209,11 +203,10 @@ var init = function () {
 
 /** The game loop function, used for game updates and rendering*/
 var loop = function () {
-    if (!pauseGame && !quitGame && !gameOverPauseGame) {
+    if (!pauseGame && !quitGame && !gameOver) {
         update();
         draw();
     }
-    // console.log(pauseGame && quitGame);
     /** When ready to redraw the canvas call the loop function first. 
     Runs about 60 frames a second */
     window.requestAnimationFrame(loop, canvas);
@@ -278,10 +271,9 @@ var update = function () {
         
         // GAME OVER //
         /** checks all gameover conditions */
-        if (0 > nx || nx > grid.width - 1 || 0 > ny || ny > grid.height - 1 || grid.get(nx, ny) === SNAKE) {
-            console.log("Boundary Confliction");
-            return !gameOverPauseGame;
-            // return gameOver();
+        if (1 > nx || nx > grid.width - 2 || 0 > ny || ny > grid.height || grid.get(nx, ny) === SNAKE) {
+            gameOver = !gameOver;
+            console.log("GameOver Function Running; Boundary Confliction", gameOver);
         }
            
         /** check wheter the new position are on the fruit item */
