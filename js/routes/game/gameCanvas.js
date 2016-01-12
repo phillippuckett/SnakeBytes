@@ -32,6 +32,13 @@ var pause = function () {
     if (pauseGAME === true) {
         console.log("PAUSE MENU OPENED");
     }
+
+    setInterval(function () {
+        if (keystate[79]) {
+            console.log("GAME RESUMED");
+            pauseGAME = false;
+        }
+    }, 100);
 }
 
 // GAME OBJECTS //
@@ -183,15 +190,15 @@ var init = function () {
 
 /** The game loop function, used for game updates and rendering*/
 var loop = function () {
-    update();
-    draw();
-    
+    if (!pauseGAME) {
+        update();
+        draw();
+    }
     /** When ready to redraw the canvas call the loop function first. 
     Runs about 60 frames a second */
     console.log(pauseGAME);
-    if (!pauseGAME) {
-        window.requestAnimationFrame(loop, canvas);
-    }
+    window.requestAnimationFrame(loop, canvas);
+
 }
 /** Updates the game logic*/
 var update = function () {
@@ -246,10 +253,6 @@ var update = function () {
         
         // GAME OVER //
         /** checks all gameover conditions */
-        // if (0 > nx || nx > grid.width - 1 || 0 > ny || ny > grid.height - 1 || grid.get(nx, ny) === SNAKE) {
-        //     return init();
-        // }      
-        
         // attempt 6 //
         if (!gameOverCount && (0 > nx || nx > grid.width - 1 || 0 > ny || ny > grid.height - 1 || grid.get(nx, ny) === SNAKE)) {
             var gameOverCount = true;
