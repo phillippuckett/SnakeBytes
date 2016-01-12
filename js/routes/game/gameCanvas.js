@@ -13,12 +13,13 @@ var UP = 1;
 var RIGHT = 2;
 var DOWN = 3;
 
-// KEYS //
+// ARROW KEYS //
 var leftLEFT = 37;
 var upUP = 38;
 var rightRIGHT = 39;
 var downDOWN = 40;
 
+// W, A, S, D //
 var aLEFT = 65;
 var wUP = 87;
 var dRIGHT = 68;
@@ -26,20 +27,38 @@ var sDOWN = 83;
 
 // PAUSE //
 var pPAUSE = 80;
-var pauseGAME = false;
+var pauseGame = false;
 
 var pause = function () {
-    if (pauseGAME === true) {
-        console.log("PAUSE MENU OPENED");
+    if (pauseGame === true) {
+        console.log("Keystate 'P' Running; PAUSE");
     }
-
     setInterval(function () {
         if (keystate[79]) {
-            console.log("GAME RESUMED");
-            pauseGAME = false;
+            console.log("Keystate 'O' Running; RESUME");
+            pauseGame = false;
         }
-    }, 100);
-}
+    }, 1);
+};
+
+// QUIT //
+var escQuit = 27;
+var quitGame = false;
+
+var quit = function () {
+    if (quitGame === true) {
+        console.log("Keystate 'Esc' Running; QUIT");
+    }
+};
+
+// GAME OVER //
+var gameOverPauseGame = false;
+
+var gameOver = function () {
+    if (gameOverPauseGame === true) {
+        console.log("GameOver Function Running; GAMEOVER");
+    }
+};
 
 // GAME OBJECTS //
 var canvas;	  /* HTMLCanvas */
@@ -190,13 +209,13 @@ var init = function () {
 
 /** The game loop function, used for game updates and rendering*/
 var loop = function () {
-    if (!pauseGAME) {
+    if (!pauseGame && !quitGame && !gameOverPauseGame) {
         update();
         draw();
     }
+    // console.log(pauseGame && quitGame);
     /** When ready to redraw the canvas call the loop function first. 
     Runs about 60 frames a second */
-    console.log(pauseGAME);
     window.requestAnimationFrame(loop, canvas);
 
 }
@@ -218,13 +237,19 @@ var update = function () {
         snake.direction = DOWN;
     }
     if (keystate[pPAUSE]) {
-        if (pauseGAME === false) {
-            console.log('GAME PAUSED');
-            pauseGAME = true;
+        if (pauseGame === false) {
+            pauseGame = true;
             pause();
         } else {
-            console.log("GAME RESUMED");
-            pauseGAME = false;
+            pauseGame = false;
+        }
+    }
+    if (keystate[escQuit]) {
+        if (quitGame === false) {
+            quitGame = true;
+            quit();
+        } else {
+            quitGame = false;
         }
     }
 
@@ -253,14 +278,12 @@ var update = function () {
         
         // GAME OVER //
         /** checks all gameover conditions */
-        // attempt 6 //
-        if (!gameOverCount && (0 > nx || nx > grid.width - 1 || 0 > ny || ny > grid.height - 1 || grid.get(nx, ny) === SNAKE)) {
-            var gameOverCount = true;
-            console.log(gameOverCount);
-            return console.log("GAME OVER");
-            pauseGAME = true;
+        if (0 > nx || nx > grid.width - 1 || 0 > ny || ny > grid.height - 1 || grid.get(nx, ny) === SNAKE) {
+            console.log("Boundary Confliction");
+            return !gameOverPauseGame;
+            // return gameOver();
         }
-        
+           
         /** check wheter the new position are on the fruit item */
         if (grid.get(nx, ny) === FRUIT) {
             

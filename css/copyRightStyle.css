@@ -7,4 +7,19 @@
 	width: 100%;
     height: 15px;
     opacity: .5;
+    float: left;
 }
+
+.icons {
+    color: darkorange;
+    font-size: 35px;
+	text-align: center;
+	position: fixed;
+	width: 100%;
+    height: 15px;
+    opacity: .5;
+}
+.icons:link {color: orange;text-decoration: none;}
+.icons:visited {color: orange; text-decoration: none;}
+.icons:hover {color: orangered; text-decoration: none;}
+.icons:link {color: orange; text-decoration: none;}
