@@ -1,21 +1,32 @@
 canvas {
     min-height: 200px; height: 100%; max-height: 2000px;
     min-width: 200px; width: 100%; max-width: 2000px;
-    margin: .5% .25%; float: left;
+    margin: .5% .25%;
     box-shadow: 0px 0px 5px 5px darkgreen;
     border-radius: 5px;
 }
-
-.homeButton {
-    border: 1px solid orange;
+.gameHeader {
+    border: 1px solid darkorange;
     border-radius: 10px;
     background-color: midnightblue;
-    color: orange;
+    color: darkorange;
     font-size: 20px;
     font-family: 'Slackey', cursive;
     height: 25px;
     text-align: center;
-    margin: auto; top: 0; bottom: 10%;  
+    margin: 0 0 1% 0;
+}
+
+.homeButton {
+    border: 1px solid orange;
+    border-radius: 50%;
+    background-color: midnightblue;
+    color: orange;
+    min-height: 20px; height: 20%;
+    min-width: 20px; width: 5%;
+    font-size: 15px;
+    text-align: center;
+    margin: auto;
 }
 .homeButton:link {color: orange; border: 1px solid orange; text-decoration: none;}
 .homeButton:visited {color: orange; border: 1px solid orange; text-decoration: none;}

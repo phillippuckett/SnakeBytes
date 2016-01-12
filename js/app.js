@@ -16,6 +16,16 @@ var snakeBytes = angular.module('snakeBytes', ['ui.router'])
                 templateUrl: 'js/routes/options/optionsTmpl.html',
                 controller: 'optionsCtrl'
             })
+            .state('pause', {
+                url: '/pause',
+                templateUrl: 'js/routes/pause/pauseTmpl.html',
+                controller: 'pauseCtrl'
+            })
+            .state('scoreboard', {
+                url: '/scoreboard',
+                templateUrl: 'js/routes/scoreboard/scoreboardTmpl.html',
+                controller: 'scoreboardCtrl'
+            })
         $urlRouterProvider.otherwise('/home');
     });
     

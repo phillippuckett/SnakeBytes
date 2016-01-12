@@ -1,4 +1,5 @@
 /** Here we will declare our variables */
+
 // CONSTANTS //
 var COLS = 25;
 var ROWS = 25;
@@ -13,14 +14,29 @@ var RIGHT = 2;
 var DOWN = 3;
 
 // KEYS //
-var KEY_LEFT = 65 && 37;
-var KEY_UP = 87 && 38;
-var KEY_RIGHT = 68 && 39;
-var KEY_DOWN = 83 && 40;
+var leftLEFT = 37;
+var upUP = 38;
+var rightRIGHT = 39;
+var downDOWN = 40;
+
+var aLEFT = 65;
+var wUP = 87;
+var dRIGHT = 68;
+var sDOWN = 83;
+
+// PAUSE //
+var pPAUSE = 80;
+var pauseGAME = false;
+
+var pause = function () {
+    if (pauseGAME === true) {
+        console.log("PAUSE MENU OPENED");
+    }
+}
 
 // GAME OBJECTS //
 var canvas;	  /* HTMLCanvas */
-var context;	  /* CanvasRenderingContext2d */
+var context;  /* CanvasRenderingContext2d */
 var keystate; /* Object, used for keyboard inputs */
 var frames;   /* number, used for animation */
 var score;	  /* number, keep track of the player score */
@@ -34,10 +50,10 @@ var grid = {
     height: null, /* number, the number of rows */
     _grid: null,  /* Array<any>, data representation */
     
-	/** Initiate and fill a c x r grid with the value of d
-	 * @param  {any}    d default value to fill with
-	 * @param  {number} c number of columns
-	 * @param  {number} r number of rows*/
+    /** Initiate and fill a c x r grid with the value of d
+     * @param  {any}    d default value to fill with
+     * @param  {number} c number of columns
+     * @param  {number} r number of rows*/
     init: function (d, c, r) {
         this.width = c;
         this.height = r;
@@ -50,18 +66,18 @@ var grid = {
         }
     },
     
-	/**Set the value of the grid cell at (x, y)
-	 * @param {any}    val what to set
-	 * @param {number} x   the x-coordinate
-	 * @param {number} y   the y-coordinate*/
+    /**Set the value of the grid cell at (x, y)
+     * @param {any}    val what to set
+     * @param {number} x   the x-coordinate
+     * @param {number} y   the y-coordinate*/
     set: function (val, x, y) {
         this._grid[x][y] = val;
     },
     
-	/** Get the value of the cell at (x, y)
-	 * @param  {number} x the x-coordinate
-	 * @param  {number} y the y-coordinate
-	 * @return {any}   the value at the cell*/
+    /** Get the value of the cell at (x, y)
+     * @param  {number} x the x-coordinate
+     * @param  {number} y the y-coordinate
+     * @return {any}   the value at the cell*/
     get: function (x, y) {
         return this._grid[x][y];
     }
@@ -77,27 +93,27 @@ var snake = {
     last: null,		 /* Object, pointer to the last element in the queue */
     _queue: null,	 /* Array<number>, data representation*/
     
-	/** Clears the queue and sets the start position and direction
-	 * @param  {number} d start direction
-	 * @param  {number} x start x-coordinate
-	 * @param  {number} y start y-coordinate*/
+    /** Clears the queue and sets the start position and direction
+     * @param  {number} d start direction
+     * @param  {number} x start x-coordinate
+     * @param  {number} y start y-coordinate*/
     init: function (d, x, y) {
         this.direction = d;
         this._queue = [];
         this.insert(x, y);
     },
     
-	/** Adds an element to the queue
-	 * @param  {number} x x-coordinate
-	 * @param  {number} y y-coordinate*/
+    /** Adds an element to the queue
+     * @param  {number} x x-coordinate
+     * @param  {number} y y-coordinate*/
     insert: function (x, y) {
         /* unshift prepends an element to an array */
         this._queue.unshift({ x: x, y: y });
         this.last = this._queue[0];
     },
     
-	/** Removes and returns the first element in the queue.
-	 * @return {Object} the first element*/
+    /** Removes and returns the first element in the queue.
+     * @return {Object} the first element*/
     remove: function () {
         /* pop returns the last element of an array */
         return this._queue.pop();
@@ -127,14 +143,15 @@ var setFood = function () {
 var main = function () {
     
     /** create and initiate the canvas element */
-    canvas = document.createElement("canvas");
+    //canvas = document.createElement("canvas");
+    canvas = document.getElementById("myCanvas")
     canvas.width = COLS * 15;
     canvas.height = ROWS * 15;
     context = canvas.getContext("2d");
     
     // SCORE FONT //    
     /** add the canvas element to the body of the document */
-    document.body.appendChild(canvas);
+    //document.body.appendChild(canvas);
     // sets a base font for bigger score display
     context.font = "10px Slackey";
     frames = 0;
@@ -169,28 +186,41 @@ var loop = function () {
     update();
     draw();
     
-	/** When ready to redraw the canvas call the loop function first. 
+    /** When ready to redraw the canvas call the loop function first. 
     Runs about 60 frames a second */
-    window.requestAnimationFrame(loop, canvas);
+    console.log(pauseGAME);
+    if (!pauseGAME) {
+        window.requestAnimationFrame(loop, canvas);
+    }
 }
 /** Updates the game logic*/
 var update = function () {
     frames++;
     
     /** changing direction of the snake depending on which keys that are pressed */
-    if (keystate[KEY_LEFT] && snake.direction !== RIGHT) {
+    if (keystate[leftLEFT] && snake.direction !== RIGHT || keystate[aLEFT] && snake.direction !== RIGHT) {
         snake.direction = LEFT;
     }
-    if (keystate[KEY_UP] && snake.direction !== DOWN) {
+    if (keystate[upUP] && snake.direction !== DOWN || keystate[wUP] && snake.direction !== DOWN) {
         snake.direction = UP;
     }
-    if (keystate[KEY_RIGHT] && snake.direction !== LEFT) {
+    if (keystate[rightRIGHT] && snake.direction !== LEFT || keystate[dRIGHT] && snake.direction !== LEFT) {
         snake.direction = RIGHT;
     }
-    if (keystate[KEY_DOWN] && snake.direction !== UP) {
+    if (keystate[downDOWN] && snake.direction !== UP || keystate[sDOWN] && snake.direction !== UP) {
         snake.direction = DOWN;
     }
-    
+    if (keystate[pPAUSE]) {
+        if (pauseGAME === false) {
+            console.log('GAME PAUSED');
+            pauseGAME = true;
+            pause();
+        } else {
+            console.log("GAME RESUMED");
+            pauseGAME = false;
+        }
+    }
+
     /** each five frames update the game state */
     if (frames % 5 === 0) {
         
@@ -216,12 +246,16 @@ var update = function () {
         
         // GAME OVER //
         /** checks all gameover conditions */
-        if (0 > nx || nx > grid.width - 1 ||
-            0 > ny || ny > grid.height - 1 ||
-            grid.get(nx, ny) === SNAKE
-            ) {
-            return console.log("Game Over");
-            return init();
+        // if (0 > nx || nx > grid.width - 1 || 0 > ny || ny > grid.height - 1 || grid.get(nx, ny) === SNAKE) {
+        //     return init();
+        // }      
+        
+        // attempt 6 //
+        if (!gameOverCount && (0 > nx || nx > grid.width - 1 || 0 > ny || ny > grid.height - 1 || grid.get(nx, ny) === SNAKE)) {
+            var gameOverCount = true;
+            console.log(gameOverCount);
+            return console.log("GAME OVER");
+            pauseGAME = true;
         }
         
         /** check wheter the new position are on the fruit item */
@@ -232,7 +266,7 @@ var update = function () {
             setFood();
         } else {
             
-			/** take out the first item from the snake queue i.e 
+            /** take out the first item from the snake queue i.e 
             the tail and remove id from grid */
             var tail = snake.remove();
             grid.set(EMPTY, tail.x, tail.y);
@@ -274,13 +308,3 @@ var draw = function () {
     context.fillStyle = "darkorange";
     context.fillText("SCORE: " + score, 10, canvas.height - 10);
 }
-
-// /** pause the game */
-// var pauseGame = function () {}
-
-// /** stop canvas from running */
-// var stopCanvas = function () {
-//     if (menu === true) {
-//         return;
-//     }
-// }

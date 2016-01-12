@@ -1,0 +1,14 @@
+.pauseMenu {
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: orange;
+    font-size: 25px;
+    font-family: 'Slackey', cursive;
+    height: 40px;
+    width: 198px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    top: 25%;
+}

@@ -1,6 +1,6 @@
 body {
     font-family: 'Slackey', cursive;
-    /*background-color: black;*/
+    background-color: black;
     background-size: cover;
     padding: 1%;
 }
@@ -20,8 +20,7 @@ body {
     top: 5%;
     right: 0;
     bottom: 0;
-    left: 0;
-    
+    left: 0;  
 }
 
 .startButton {
@@ -31,12 +30,11 @@ body {
     color: orange;
     font-size: 25px;
     font-family: 'Slackey', cursive;
-    height: 40px;
+    height: 35px;
     width: 198px;
     text-align: center;
     position: relative;
     margin: auto;
-    top: 25%;
 }
 .startButton:hover {color: orangered; border: 1px solid orangered;}
 
@@ -54,3 +52,18 @@ body {
     margin: auto;
 }
 .optionsButton:hover {color: orangered; border: 1px solid orangered;}
+
+.scoreboardButton {
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: orange;
+    font-size: 20px;
+    font-family: 'Slackey', cursive;
+    height: 35px;
+    width: 198px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+.scoreboardButton:hover {color: orangered; border: 1px solid orangered;}

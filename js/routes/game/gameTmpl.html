@@ -1,32 +1,21 @@
-<div id="gamePage">
-    <div class="gamePlay">
-        <div class="homeButton" onclick="goHome()">{{gameHeader}}
-            <script>
-                var goHome = function () {
-                window.history.back();
-            };
-            </script>
-        </div>
-    </div>
-    <!--BACK-->
-    <!--Stop Game Function-->
-    <!--<script>
-        var stopGame = function () {
-            if (startGame = true) {
-                return startGame = false;
-            }
-        };
-        stopGame();
-        console.log("stopGame Running");
-    </script>-->
-
+<div id="gamePage" class="gamePlay">
+    <div class="gameHeader">{{gameHeader}}</div>
     <!--Canvas-->
-    <script>
-        main();
-        /** pause menu */
-            /* resume */
-            /* options */
-            /** game over */
-            /**  */
-    </script>
+    <canvas id="myCanvas"></canvas>
+    <!--Home Button-->
+    <div class="homeButton" onclick="goHome()">{{homeButton}}
+        <script>
+            // Initiates Canvas //   
+                main();       
+                // Back Function //
+                var goHome = function () {
+                    window.history.back();
+                    window.main() = function () {                   
+                        return false;
+                    };
+                };
+        </script>
+        <!--Pause-->
+        <a href="/#/pause" onClick="pauseGAME()">
+    </div>
 </div>

@@ -6,4 +6,5 @@ angular.module('snakeBytes')
         $scope.homeHeader = "SNAKE BYTES";
         $scope.startGame = "START GAME";
         $scope.options = "OPTIONS";
+        $scope.scoreboardButton = "SCOREBOARD";
     });

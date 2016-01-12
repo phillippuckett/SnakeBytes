@@ -1,9 +1,9 @@
 .optionsMenu {  
-    border: 1px solid darkorange;
+    border: 1px solid silver;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
     background-color: midnightblue;
-    color: darkorange;
+    color: white;
     text-align: center;
     font-size: 36px;
     min-height: 200px; max-height: 250px;
