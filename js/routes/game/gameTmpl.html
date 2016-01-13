@@ -1,21 +1,23 @@
-<div id="gamePage" class="gamePlay">
-    <div class="gameHeader">{{gameHeader}}</div>
+<!--Game Page-->
+<!--<div id="gamePage" class="gamePlay" ng-keypress="onKeyPress()">{{gameHeader}}-->
+<div id="gamePage" class="gamePlay">{{gameHeader}}
     <!--Canvas-->
     <canvas id="myCanvas"></canvas>
+    
     <!--Home Button-->
-    <div class="homeButton" onclick="goHome()">{{homeButton}}
-        <script>
-            // Initiates Canvas //   
-                main();       
-                // Back Function //
-                var goHome = function () {
-                    window.history.back();
-                    window.main() = function () {                   
-                        return false;
-                    };
-                };
-        </script>
-        <!--Pause-->
-        <a href="/#/pause" onClick="pauseGAME()">
-    </div>
+    <a href="/#/home" class="gameHomeButton">{{gameHomeButton}}</a>
+
+    <!--Pause-->
+    <a href="/#/pause" class="gamePauseMenu" ng-keypress="pauseGame();">{{gamePauseMenu}}</a>
+    <script>
+        var pause 
+    if (keystate[pPAUSE]) {
+        if (pauseGame === false) {
+            pauseGame = true;
+            pause();
+        } else {
+            pauseGame = false;
+        }
+    }
+    </script>
 </div>

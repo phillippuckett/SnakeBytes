@@ -33,12 +33,13 @@ var pause = function () {
     if (pauseGame === true) {
         console.log("Keystate 'P' Running; PAUSE", pauseGame);
     }
+    
     setInterval(function () {
         if (keystate[79]) {
             console.log("Keystate 'O' Running; RESUME", pauseGame);
             pauseGame = false;
         }
-    }, 1);
+    }, 100);
 };
 
 // QUIT //

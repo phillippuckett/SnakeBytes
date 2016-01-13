@@ -36,8 +36,9 @@ body {
     position: relative;
     margin: auto;
 }
-.startButton:hover {color: orangered; border: 1px solid orangered;}
-
+.startButton:hover {color: lime; border: 1px solid lime;
+                         text-decoration: none; height: 40px; width: 205px; font-size: 30px;}
+                         
 .optionsButton {
     border: 1px solid darkorange;
     border-radius: 10px;
@@ -51,8 +52,9 @@ body {
     position: relative;
     margin: auto;
 }
-.optionsButton:hover {color: orangered; border: 1px solid orangered;}
-
+.optionsButton:hover {color: orangered; border: 1px solid orangered;
+                         text-decoration: none; height: 40px; width: 200px; font-size: 30px;}
+                         
 .scoreboardButton {
     border: 1px solid darkorange;
     border-radius: 10px;
@@ -66,4 +68,5 @@ body {
     position: relative;
     margin: auto;
 }
-.scoreboardButton:hover {color: orangered; border: 1px solid orangered;}
+.scoreboardButton:hover {color: orangered; border: 1px solid orangered;
+                         text-decoration: none; height: 40px; width: 200px; font-size: 25px;}

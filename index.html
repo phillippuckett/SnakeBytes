@@ -13,11 +13,15 @@
     <link rel="stylesheet" href="css/gameStyle.css">
     <link rel="stylesheet" href="css/pauseStyle.css">
     <link rel="stylesheet" href="css/scoreboardStyle.css">
+    <link rel="stylesheet" href="css/socialMediaStyle.css">
 </head>
 
 <body>
     <!--Ui-Router-->
     <ui-view></ui-view>
+    
+    <!--Social Media Directive-->
+    <social-media-dir></social-media-dir>
 
     <!--CopyRight Directive-->
     <copy-right-dir></copy-right-dir>
@@ -34,6 +38,7 @@
     <script src="js/app.js"></script>
     <Script src="js/routes/game/gameCanvas.js"></Script>
     <script src="js/directives/copyRight/copyRightDir.js"></script>
+    <script src="js/directives/socialMedia/socialMediaDir.js"></script>
     <script src="js/routes/home/homeCtrl.js"></script>
     <script src="js/routes/game/gameCtrl.js"></script>
     <script src="js/routes/options/optionsCtrl.js"></script>
