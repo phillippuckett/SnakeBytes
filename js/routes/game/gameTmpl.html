@@ -1,17 +1,15 @@
 <!--Game Page-->
-<!--<div id="gamePage" class="gamePlay" ng-keypress="onKeyPress()">{{gameHeader}}-->
-<div id="gamePage" class="gamePlay">{{gameHeader}}
+<div id="gamePage" class="gamePlay">
+
+    <!--Header-->
+    <div class="gameHeader">{{gameHeader}}</div>
+
     <!--Canvas-->
-    <canvas id="myCanvas"></canvas>
-    
+    <canvas id="myCanvas" ng-keypress="onKeypress($event)" tabindex="0"></canvas>
+
     <!--Home Button-->
-    <a href="/#/home" class="gameHomeButton">{{gameHomeButton}}</a>
+    <a href="/#/home" class="gameHomeButton"></a>
 
     <!--Pause-->
-    <a href="/#/pause" class="gamePauseMenu" ng-keypress="pauseGame();">{{gamePauseMenu}}</a>
-    <script>
-        var pauseeGame = function () {
-            
-        }
-    </script>
+    <a href="/#/pause" class="gamePauseMenu"></a>
 </div>

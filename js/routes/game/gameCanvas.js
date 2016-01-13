@@ -1,5 +1,7 @@
 /** Here we will declare our variables */
 
+var gameGoing = false;
+
 // CONSTANTS //
 var COLS = 25;
 var ROWS = 25;
@@ -29,18 +31,18 @@ var sDOWN = 83;
 var pPAUSE = 80;
 var pauseGame = false;
 
-var pause = function () {
-    if (pauseGame === true) {
-        console.log("Keystate 'P' Running; PAUSE", pauseGame);
-    }
+// var pause = function () {
+//     if (pauseGame === true) {
+//         console.log("Keystate 'P' Running; PAUSE", pauseGame);
+//     }
     
-    setInterval(function () {
-        if (keystate[79]) {
-            console.log("Keystate 'O' Running; RESUME", pauseGame);
-            pauseGame = false;
-        }
-    }, 100);
-};
+//     setInterval(function () {
+//         if (keystate[79]) {
+//             console.log("Keystate 'O' Running; RESUME", pauseGame);
+//             pauseGame = false;
+//         }
+//     }, 100);
+// };
 
 // QUIT //
 var escQuit = 27;
@@ -48,7 +50,7 @@ var quitGame = false;
 
 var quit = function () {
     if (quitGame === true) {
-        console.log("Keystate 'Esc' Running; QUIT", quitGame);
+        console.log("Keystate Running; QUIT", quitGame);
     }
 };
 
@@ -162,6 +164,7 @@ var setFood = function () {
 // START GAME //
 /** Starts the game*/
 var main = function () {
+    gameOver = false;
     
     /** create and initiate the canvas element */
     //canvas = document.createElement("canvas");
@@ -188,7 +191,10 @@ var main = function () {
     
     /** initiates game objects and starts the game loop */
     init();
-    loop();
+    if (!gameGoing) {
+        gameGoing = true;
+        loop();
+    }
 }
 
 // GAME RESTART //
@@ -230,14 +236,14 @@ var update = function () {
     if (keystate[downDOWN] && snake.direction !== UP || keystate[sDOWN] && snake.direction !== UP) {
         snake.direction = DOWN;
     }
-    if (keystate[pPAUSE]) {
-        if (pauseGame === false) {
-            pauseGame = true;
-            pause();
-        } else {
-            pauseGame = false;
-        }
-    }
+    // if (keystate[pPAUSE]) {
+    //     if (pauseGame === false) {
+    //         pauseGame = true;
+    //         pause();
+    //     } else {
+    //         pauseGame = false;
+    //     }
+    // }
     if (keystate[escQuit]) {
         if (quitGame === false) {
             quitGame = true;
