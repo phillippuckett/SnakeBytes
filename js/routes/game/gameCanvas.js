@@ -1,7 +1,14 @@
+/** Here we will declare functions */
+// QUIT //
+var qQuit = 113;
+var quitGame = false;
+var quit = function () {
+    if (quitGame === true) {
+        console.log("Keystate Running; QUIT", quitGame);
+    }
+};
+
 /** Here we will declare our variables */
-
-var gameGoing = false;
-
 // CONSTANTS //
 var COLS = 25;
 var ROWS = 25;
@@ -28,34 +35,18 @@ var dRIGHT = 68;
 var sDOWN = 83;
 
 // PAUSE //
-var pPAUSE = 80;
+var pPause = 80;
 var pauseGame = false;
 
-// var pause = function () {
-//     if (pauseGame === true) {
-//         console.log("Keystate 'P' Running; PAUSE", pauseGame);
-//     }
-    
-//     setInterval(function () {
-//         if (keystate[79]) {
-//             console.log("Keystate 'O' Running; RESUME", pauseGame);
-//             pauseGame = false;
-//         }
-//     }, 100);
-// };
-
-// QUIT //
-var escQuit = 27;
-var quitGame = false;
-
-var quit = function () {
-    if (quitGame === true) {
-        console.log("Keystate Running; QUIT", quitGame);
-    }
-};
+// ONE GAME AT A TIME //
+var gameGoing = false;
 
 // GAME OVER //
 var gameOver = false;
+
+// RESTART //
+// var rRestart = 82;
+// var restartGame = false;
 
 // GAME OBJECTS //
 var canvas;	  /* HTMLCanvas */
@@ -148,8 +139,8 @@ var snake = {
 var setFood = function () {
     var empty = [];
     /** iterate through the grid and find all empty cells */
-    for (var x = 0; x < grid.width; x++) {
-        for (var y = 0; y < grid.height; y++) {
+    for (var x = 1; x < grid.width - 2; x++) {
+        for (var y = 1; y < grid.height - 2; y++) {
             if (grid.get(x, y) === EMPTY) {
                 empty.push({ x: x, y: y });
             }
@@ -236,15 +227,7 @@ var update = function () {
     if (keystate[downDOWN] && snake.direction !== UP || keystate[sDOWN] && snake.direction !== UP) {
         snake.direction = DOWN;
     }
-    // if (keystate[pPAUSE]) {
-    //     if (pauseGame === false) {
-    //         pauseGame = true;
-    //         pause();
-    //     } else {
-    //         pauseGame = false;
-    //     }
-    // }
-    if (keystate[escQuit]) {
+    if (keystate[qQuit]) {
         if (quitGame === false) {
             quitGame = true;
             quit();
@@ -252,6 +235,13 @@ var update = function () {
             quitGame = false;
         }
     }
+    // if (keystate[rRestart]) {
+    //     if (restartGame === false) {
+    //         restartGame = true;
+    //     } else {
+    //         restartGame = false;
+    //     }
+    // }
 
     /** each five frames update the game state */
     if (frames % 5 === 0) {
@@ -278,9 +268,9 @@ var update = function () {
         
         // GAME OVER //
         /** checks all gameover conditions */
-        if (1 > nx || nx > grid.width - 2 || 0 > ny || ny > grid.height || grid.get(nx, ny) === SNAKE) {
+        if (1 > nx || nx > grid.width - 2 || 1 > ny || ny > grid.height - 2 || grid.get(nx, ny) === SNAKE) {
             gameOver = !gameOver;
-            console.log("GameOver Function Running; Boundary Confliction", gameOver);
+            console.log("GameOver", gameOver);
         }
            
         /** check wheter the new position are on the fruit item */

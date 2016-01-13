@@ -1,5 +1,5 @@
 angular.module('snakeBytes')
-    .controller('gameCtrl', function ($scope, $window) {
+    .controller('gameCtrl', function ($scope, $window, $state) {
         $scope.gameHeader = "SNAKE BYTES";
         console.log("gameCtrl Running");
         main();
@@ -8,27 +8,21 @@ angular.module('snakeBytes')
             gameCanvas.focus();
         }
         $scope.onKeypress = function (event) {
+            console.log('Key Pressed:', event.keyCode);
             switch (event.keyCode) {
                 
                 // PAUSE //
                 case 112:
                     pauseGame = !pauseGame;
-                    if (pauseGame) {
-                        console.log("Keystate Running; PAUSE", pauseGame);
-                    } else {
-                        console.log("Keystate Running; RESUME", pauseGame);
-                    }
+                    $("pauseMenu").css('visibility','visible');                
+                    console.log("Keystate Running; PAUSE", pauseGame);
+                    
                     break;
                 
                 // QUIT //
-                case 27:
-                    quitGame = !quitGame;
-                    console.log("Keystate Running; QUIT", quitGame);
-                    break;
-                    
-                // ENTER //
-                case 13:
-                    console.log('enter!');
+                case 113:
+                    $state.go('home');
+                    // console.log("Keystate Running; QUIT", quitGame);
                     break;
             }
         }

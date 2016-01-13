@@ -1,5 +1,5 @@
 angular.module('snakeBytes')
-    .controller('optionsCtrl', function ($scope) {
+    .controller('optionsCtrl', function ($scope, $window, $state) {
         console.log("OptionsCtrl Running");
         $scope.header = "SETTINGS";
         $scope.toggleMusic = "MUSIC";

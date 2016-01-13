@@ -1,4 +1,5 @@
-.PauseMenu {  
+.PauseMenu {
+    display: none;
     border: 1px solid silver;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
