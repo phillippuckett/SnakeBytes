@@ -52,7 +52,7 @@ body {
     position: relative;
     margin: auto;
 }
-.optionsButton:hover {color: orangered; border: 1px solid orangered;
+.optionsButton:hover {color: yellow; border: 1px solid yellow;
                          text-decoration: none; height: 40px; width: 200px; font-size: 30px;}
                          
 .scoreboardButton {

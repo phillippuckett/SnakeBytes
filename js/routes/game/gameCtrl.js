@@ -14,15 +14,15 @@ angular.module('snakeBytes')
                 // PAUSE //
                 case 112:
                     pauseGame = !pauseGame;
-                    $("pauseMenu").css('visibility','visible');                
+                    $scope.pauseGame = pauseGame;            
                     console.log("Keystate Running; PAUSE", pauseGame);
                     
                     break;
                 
                 // QUIT //
                 case 113:
-                    $state.go('home');
-                    // console.log("Keystate Running; QUIT", quitGame);
+                    $state.go('scoreboard');
+                    console.log("Keystate Running; QUIT", quitGame);
                     break;
             }
         }

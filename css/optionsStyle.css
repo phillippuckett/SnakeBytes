@@ -29,7 +29,7 @@
     position: relative;
     margin: 5% 25%;
 }
-.toggleMusic:hover {color: orangered; border: 1px solid orangered; text-decoration: none; height: 30px; width: 145px; font-size: 25px;}
+.toggleMusic:hover {color: magenta; border: 1px solid magenta; text-decoration: none; height: 30px; width: 145px; font-size: 25px;}
 
 .toggleSound {
     border: 1px solid midnightblue;
@@ -44,7 +44,7 @@
     margin: 5% 25%;
 }
 
-.toggleSound:hover {color: orangered; border: 1px solid orangered; text-decoration: none; height: 30px; width: 145px; font-size: 25px;}
+.toggleSound:hover {color: magenta; border: 1px solid magenta; text-decoration: none; height: 30px; width: 145px; font-size: 25px;}
 
 
 .backButton {
@@ -61,5 +61,5 @@
 }
 .backButton:link {color: orange; border: 1px solid orange; text-decoration: none;}
 .backButton:visited {color: orange; border: 1px solid orange; text-decoration: none;}
-.backButton:hover {color: lime; border: 1px solid lime; text-decoration: none;
+.backButton:hover {color: orangered; border: 1px solid orangered; text-decoration: none;
                         height: 40px; width: 155px; font-size: 30px;}
