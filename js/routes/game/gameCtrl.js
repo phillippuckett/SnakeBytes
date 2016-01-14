@@ -25,10 +25,4 @@ angular.module('snakeBytes')
                     break;
             }
         }
-        
-        // GAME OVER //
-        $scope.gameOver = function () {
-            $state.go('scoreboard');
-            console.log('Game Over!');
-        }
     });

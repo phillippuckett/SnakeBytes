@@ -263,16 +263,12 @@ var update = function () {
         if (1 > nx || nx > grid.width - 2 || 1 > ny || ny > grid.height - 2 || grid.get(nx, ny) === SNAKE) {
             gameOver = true;
             console.log("GameOver", gameOver);
-            $('div#gameOverMenu').css('display', 'block');
-            console.log('getting here game over');
             setTimeout(function () {
-                angular.element(document.getElementById('gamePage')).scope().gameOver();
+                $('div#gameOverMenu').css('display', 'block');
             }, 1000);
+            // console.log('getting here game over');
+                angular.element(document.getElementById('gameOverMenu')).scope().gameOver();
         }
-        
-       
-       
-        // setTimeout(function(){ ; }, 1000);
            
         /** check wheter the new position are on the fruit item */
         if (grid.get(nx, ny) === FRUIT) {
