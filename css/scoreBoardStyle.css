@@ -6,8 +6,8 @@
     color: white;
     text-align: center;
     font-size: 36px;
-    min-height: 200px; max-height: 500px;
-    min-width: 200px; max-width: 300px;
+    min-height: 350px; max-height: 85%;
+    min-width: 350px; max-width: 40%;
     position: fixed;
     margin: auto;
     top: 5%;
@@ -56,7 +56,7 @@
     text-align: center;
     font-size: 15px;  
     height: 80%;
-    min-width: 200px; max-width: 95%; 
+    width: 95%; 
     margin: auto;
     bottom: 0;
     overflow-y: auto;

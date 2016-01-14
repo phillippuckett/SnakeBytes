@@ -8,25 +8,29 @@
     <canvas id="myCanvas" ng-keypress="onKeypress($event)" tabindex="0"></canvas>
 
     <!--Home Button-->
-        <a id="gameHome" href="/#/home" class="gameHomeButton" onkeypress="quit()">
-        </a>
-        
-    <!--Pause-->
+    <a id="gameHome" href="/#/home" class="gameHomeButton" onkeypress="quit()"></a>
+
+    <!--PAUSE PAUSE PAUSE-->
     <div id="pausePage" class="PauseMenu" ng-hide="!pauseGame">PAUSE
-        
-    <!--Options Button-->
-    <div>
-        <a href="/#/options">
-            <button class="pauseOptionsButton">OPTIONS</button>
-        </a>
+
+        <!--Options Button-->
+        <div>
+            <a href="/#/options">
+                <button class="pauseOptionsButton">OPTIONS</button>
+            </a>
+        </div>
+
+        <!--Quit Button-->
+        <div>
+            <a href="/#/scoreboard">
+                <button class="pauseHomeButton">QUIT</button>
+            </a>
+        </div>
     </div>
 
-    <!--Quit Button-->
-    <div>
-        <a href="/#/scoreboard">
-            <button class="pauseHomeButton">QUIT</button>
-        </a>
-    </div>
+    <!--Game Over-->
+    <a href="/#/scoreboard">
+    
     </a>
-</div>
+
 </div>

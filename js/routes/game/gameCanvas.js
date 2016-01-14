@@ -235,14 +235,6 @@ var update = function () {
             quitGame = false;
         }
     }
-    // if (keystate[rRestart]) {
-    //     if (restartGame === false) {
-    //         restartGame = true;
-    //     } else {
-    //         restartGame = false;
-    //     }
-    // }
-
     /** each five frames update the game state */
     if (frames % 5 === 0) {
         
@@ -271,6 +263,8 @@ var update = function () {
         if (1 > nx || nx > grid.width - 2 || 1 > ny || ny > grid.height - 2 || grid.get(nx, ny) === SNAKE) {
             gameOver = !gameOver;
             console.log("GameOver", gameOver);
+            angular.element(document.getElementById('gamePage')).scope().gameOver();
+            
         }
            
         /** check wheter the new position are on the fruit item */

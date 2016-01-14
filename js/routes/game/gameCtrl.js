@@ -14,9 +14,8 @@ angular.module('snakeBytes')
                 // PAUSE //
                 case 112:
                     pauseGame = !pauseGame;
-                    $scope.pauseGame = pauseGame;            
+                    $scope.pauseGame = pauseGame;
                     console.log("Keystate Running; PAUSE", pauseGame);
-                    
                     break;
                 
                 // QUIT //
@@ -25,5 +24,11 @@ angular.module('snakeBytes')
                     console.log("Keystate Running; QUIT", quitGame);
                     break;
             }
+        }
+    
+        // GAME OVER //
+        $scope.gameOver = function () {
+            $state.go('scoreboard');
+            console.log('Game Over!');
         }
     });
