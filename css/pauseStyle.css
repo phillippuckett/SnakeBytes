@@ -14,13 +14,9 @@
     right: 0;
     bottom: 0;
     left: 0;  
--webkit-box-shadow: inset 0px 0px 130px 30px rgba(255,255,255,1);
--moz-box-shadow: inset 0px 0px 130px 30px rgba(255,255,255,1);
-box-shadow: inset 0px 0px 130px 30px rgba(255,255,255,1);
-
--webkit-box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
--moz-box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
-box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
+    -moz-box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
+    box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
 }
 
 .pauseOptionsButton {

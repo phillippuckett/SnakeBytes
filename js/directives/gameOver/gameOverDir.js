@@ -1,10 +1,11 @@
 angular.module('snakeBytes')
-    .directive('pauseDir', function () {
+    .directive('gameOverDir', function () {
         return {
             restrict: 'E',
             templateUrl: "js/routes/game/gameTmpl.html",
             controller: function ($scope, $window, $state) {
-                console.log("pauseDir Running");
+                console.log("gameOverDir Running");
+                
             }
         }
     });
