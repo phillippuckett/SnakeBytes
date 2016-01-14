@@ -6,25 +6,17 @@ angular.module('snakeBytes')
         if (gameOverMenu) {
             gameOverMenu.focus();
         }
-        $scope.onKeypress = function (event) {
+        $scope.onKeypress = function (event, playerName) {
             switch (event.keyCode) {
-
                 // ENTER //
                 case 13:
                     $state.go('scoreboard');
-                    // console.log('Keystate Running; SUBMIT SCORE', gameOver);
+                    console.log(playerName);
+                    console.log('Keystate Running; SUBMIT SCORE', gameOver);
                     break;
             }
         }
         
-        // GAME OVER //  
-        $scope.onKeypress = function (event) {
-            console.log('Key Pressed:', event.keyCode);
-            switch (event.keyCode) {
-
-            }
-        }
-
         $scope.gameOver = function () {
         }
     });

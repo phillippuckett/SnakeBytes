@@ -29,8 +29,8 @@
     </div>
 
     <!--Game Over-->
-    <div id="gameOverMenu" class="gameOverMenu">GAME OVER!
-            <input class="gameOverModal" type="text" placeholder="jon snow">
+    <div ng-controller="gameOverCtrl" id="gameOverMenu" class="gameOverMenu">GAME OVER!
+            <input id="submit" ng-keyPress="onKeypress($event, playerName)" ng-model="playerName" class="gameOverModal" type="text">
     </div>
 
 </div>
