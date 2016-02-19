@@ -10,7 +10,7 @@ var snakeBytes = angular.module('snakeBytes', ['ui.router'])
             })
         /** Game */
             .state('game', {
-                url: '/gameplay',
+                url: '/game',
                 templateUrl: 'app/app-views/gameView.html',
                 controller: 'gameController'
             })

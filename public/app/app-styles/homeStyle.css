@@ -2,7 +2,7 @@
 /*border: 1px solid purple;*/
 min-height: 970px;
 box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
-background-image: url('/Interface/app/app-images/dark-brown-dirt.jpg');
+background-image: url('/app/app-images/dark-brown-dirt.jpg');
 background-repeat: no-repeat; 
 background-size: cover;   
 } 

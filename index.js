@@ -8,9 +8,6 @@ var cors = require('cors');
 /** Controllers */
 var scoreController = require('./server/server-controllers/scoreController');
 
-/** Services */
-// var passport = require('./server/services/passport');
-
 /** Express */
 var app = express();
 
@@ -18,9 +15,6 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(cors());
-// app.use(session({ secret: config.SESSION_SECRET }));
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 /** Score End Points */
 app.get('/api/score', scoreController.getScore);
