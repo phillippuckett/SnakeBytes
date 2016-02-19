@@ -1,0 +1,32 @@
+.homeView { font-family: 'Slackey', cursive;
+/*border: 1px solid purple;*/
+min-height: 970px;
+box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+background-image: url('/Interface/app/app-images/dark-brown-dirt.jpg');
+background-repeat: no-repeat; 
+background-size: cover;   
+} 
+
+#homeRow {   
+/*border: 1px solid magenta;*/
+display: inline-flex;
+height: 150px;
+width: 100%;    
+}
+
+#homeSpace { text-align: center;
+/*border: 1px solid deeppink;*/
+height: 100%;
+width: 100%;
+margin: auto;
+padding: .5%;
+}
+
+#homeMenu { 
+    /*border: 1px solid hotpink;*/
+    height: 1000px;
+    width: 1000px;
+    padding: .5%;
+    margin: auto;
+    
+}

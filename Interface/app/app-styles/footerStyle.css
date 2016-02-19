@@ -1,0 +1,48 @@
+.footer { font-family: 'Slackey', cursive;
+/*border: 1px solid midnightblue;*/
+}
+
+#footerRow { 
+/*border: 1px solid darkblue;*/
+display: inline-flex;
+width: 100%;    
+} 
+  
+#footerSpace { text-align: center;
+/*border: 1px solid blue;*/
+border-radius: 30px;
+box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+background-image: url('/Interface/app/app-images/grey-stone.jpg');
+background-repeat: no-repeat; 
+background-size: cover;
+margin: .5%;
+padding: .5%;
+}  
+
+.footerButton { text-align: center; font-size: 600%;
+border: 1px solid royalblue;
+border-radius: 30px;
+box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+background-image: url('/Interface/app/app-images/grey-stone.jpg');
+background-repeat: no-repeat; 
+background-size: cover;
+height: 100%; 
+width: 100%; 
+padding: .5%;
+margin: auto; 
+}
+
+.homeFooter { text-align: center;
+/*border: 1px solid lightblue;*/
+border-radius: 30px;
+box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+background-image: url('/Interface/app/app-images/grey-stone.jpg');
+background-repeat: no-repeat; 
+background-size: cover;
+min-height: 125px; 
+width: 100%; 
+padding: .5%;
+margin: .5%; 
+}
+
+#copyright { text-align: center; }
