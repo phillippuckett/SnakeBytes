@@ -7,26 +7,19 @@
 
     <!--Styles-->
     <link href='https://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="indexStyle.css">
-    <link rel="stylesheet" href="app/app-styles/gameStyle.css">
-    <link rel="stylesheet" href="app/app-styles/homeStyle.css">
-    <link rel="stylesheet" href="app/app-styles/scoreboardStyle.css">
-    <link rel="stylesheet" href="app/app-styles/headerStyle.css">
-    <link rel="stylesheet" href="app/app-styles/footerStyle.css">    
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
     <!--Header-->
-    <header-Directive></header-Directive>
+    <hdr-Dir></hdr-Dir>
 
     <!--Ui-Router-->
     <ui-view></ui-view>
 
     <!--Footer-->
-    <footer-Directive></footer-Directive>
+    <ftr-Dir></ftr-Dir>
 
     <!--Libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
@@ -34,12 +27,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
     <!--Scripts-->
-    <script src="app/app.js"></script>
-
-    <script src="app/app-controllers/gameController.js"></script>
-    <script src="app/app-controllers/homeController.js"></script>
-    <script src="app/app-controllers/scoreboardController.js"></script>
-    <script src="app/app-controllers/directiveController.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
 
 </body>
 

@@ -1,24 +1,24 @@
 
 /** Header Directive */
 angular.module('snakeBytes')
-    .directive('headerDirective', function () {
+    .directive('hdrDir', function () {
         return {
             restrict: 'E',
-            templateUrl: 'app/app-directives/headerDirective.html',
+            templateUrl: 'html/header.html',
             controller: function ($scope) {
-                // console.log('Header');
+                console.log('HEADER DIRECTIVE');
             }
         }
     });
     
 /** Footer Directive */
 angular.module('snakeBytes')
-    .directive('footerDirective', function () {
+    .directive('ftrDir', function () {
         return {
             restrict: 'E',
-            templateUrl: 'app/app-directives/footerDirective.html',
+            templateUrl: 'html/footer.html',
             controller: function ($scope) {
-                // console.log('Footer');
+                console.log('FOOTER DIRECTIVE');
                 var currentDate = new Date().getFullYear();
                 $scope.date = currentDate.toString();
             }
