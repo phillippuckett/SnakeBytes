@@ -1,0 +1,28 @@
+.game { font-family: 'Slackey', cursive;
+border: 1px solid purple;
+min-height: 970px; 
+height: 97%; 
+background-image: url('/media/dirt.jpg');
+background-repeat: no-repeat; 
+background-size: cover;    
+box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
+-webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+height: 500px; 
+} 
+
+.footerButton { text-align: center; font-size: 600%;
+/*border: 1px solid royalblue;*/
+border-radius: 30px;
+box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+background-image: url('/media/stone.jpg');
+background-repeat: no-repeat; 
+background-size: cover;
+background-color: rgba(25,25,25,1);
+min-height: 135px; 
+width: 100%; 
+padding: .5%;
+margin: .5%; 
+}
+ 
+.gameIcon a { color: white; text-decoration: none; }

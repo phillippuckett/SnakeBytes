@@ -1,0 +1,35 @@
+.optModal { 
+            text-align: center;
+            color: white;
+            text-shadow: -4px 4px 2px rgba(0,0,0,1);
+            font-family: 'Slackey', cursive;
+            font-size: 2.5vh;
+    /*border: 1px solid rgba(50,25,0,.5); border-radius: 30px;*/
+    border: 1px solid rgb(0, 0, 250);
+    margin: auto;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('/media/stone.jpg');
+    box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
+    -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+    max-height: 200px; min-height: 50vh; top: calc(32.5vh);
+    max-width: 200px; min-width: 75vw; left: calc(12.5vw);
+    position: absolute;
+}
+
+.optButton {   color: rgba(0,0,0,.5);
+                text-shadow: 0px 0px 2.5px rgba(50,25,0,.5);
+                font-family: 'Fondamento', cursive;
+                font-size: 2.5vh;
+    /*background-image: url('/media/.jpg');*/
+    /*background-size: contain;*/
+    border: 1px solid rgb(0,255,255);
+    height: 7.5vh;
+    margin: auto;
+    }
+.optButton:hover { color: rgba(150,25,0,.5);
+                    font-size: 3vh;
+                    text-shadow: 0px 0px 2.5px rgba(255,255,255,.5);
+}   

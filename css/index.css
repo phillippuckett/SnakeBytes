@@ -1,0 +1,20 @@
+html { color: white; 
+border: 1px solid darkred;
+box-shadow: inset 7.5px -7.5px 300px 200px rgba(0,0,0,1);
+-webkit-box-shadow: inset 7.5px -7.5px 300px 200px rgba(0,0,0,1);
+-moz-box-shadow: inset 7.5px -7.5px 300px 200px rgba(0,0,0,1);
+background-color: black;
+}
+a { 
+color: rgba(255,255,255,1); text-decoration: none; 
+}
+.canvas { font-family: 'Slackey', cursive;
+border: 1px solid purple;
+min-height: 57.5vh;
+box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
+-webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+background-image: url('/media/dirt.jpg');
+background-repeat: no-repeat; 
+background-size: cover;   
+}

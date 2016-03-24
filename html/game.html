@@ -1,0 +1,19 @@
+<div id="header">
+    <a id="headerButton" ng-click="optToggle()">OPTIONS</a>
+    <a id="headerButton">PAUSE</a>
+    <a id="headerButton" href="/#/score">LEAVE GAME</a>
+</div>
+
+<div class="canvas"></div>
+
+<div class="footer">
+    <div class="footerButton">L</div>
+    <div class="footerButton">U</div>
+    <div class="footerButton">D</div>
+    <div class="footerButton">R</div>
+</div>
+
+<div class="optModal" ng-if="optMenu">
+    <p>OPTIONS</p>
+        <button class="optButton" ng-click="optToggle();">RESUME GAME</button>
+</div>
