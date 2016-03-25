@@ -7,7 +7,15 @@
     <a class="button"></a>
 </div>
 
-<div class="canvas"></div>
+<div class="canvas">
+
+    <div class="optModal" ng-if="optMenu">
+        <p>OPTIONS</p>
+        <button class="optButton">MUSIC</button>
+        <button class="optButton">SOUND</button>        
+    </div>
+    
+</div>
 
 <div class="margin">
     <div class="button">L</div>
@@ -16,9 +24,5 @@
     <div class="button">R</div>
 </div>
 
-<div class="optModal" ng-if="optMenu">
-    <p>OPTIONS</p>
-    <button class="optButton" ng-click="optToggle();">RESUME GAME</button>
-</div>
 
 <div class="copyright">&#169{{date}} @PHILLIPPUCKETT88</div>

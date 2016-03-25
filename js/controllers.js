@@ -7,7 +7,7 @@ angular.module('snakeBytes')
         $scope.optButton = false;
         $scope.optToggle = function () {
             $scope.optMenu = !$scope.optMenu;
-            console.log('TOGGLE');
+            // console.log('TOGGLE');
         }
     });
 
