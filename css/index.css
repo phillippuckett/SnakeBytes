@@ -86,11 +86,11 @@ background-image: url('/media/stone.jpg');
 box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
 -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
 -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
-height: 50vh; top: calc(30vh);
-width: 50vw; left: calc(25vw);
+height: 50vh;top:calc(30vh);
+width: 50vh;
 background-repeat: no-repeat;
 background-size: cover;
-position: absolute;
+position: absolute;left:0;right:0;
 margin: auto;   
 }
 .optButton {   
