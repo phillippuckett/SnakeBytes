@@ -2,12 +2,6 @@ var snakeBytes = angular.module('snakeBytes', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
         
-            .state('main', {
-                url: '/main',
-                templateUrl: '/html/main.html',
-                controller: 'mainCtrl'
-            })
-            
             .state('game', {
                 url: '/game',
                 templateUrl: '/html/game.html',
@@ -20,6 +14,6 @@ var snakeBytes = angular.module('snakeBytes', ['ui.router'])
                 controller: 'scoreCtrl'
             })
 
-        $urlRouterProvider.otherwise('/main');
+        $urlRouterProvider.otherwise('/score');
 
     });

@@ -2,22 +2,18 @@
 
 <div class="margin">
     <a class="button"></a>
-    <a class="button" ng-click="optToggle()">PAUSE</a>
+    <a class="button" ng-click="psToggle()">
+        <div class="psTxt" ng-if="!pause">PAUSE</div>
+        <div class="psTxt" ng-if="pause">RESUME</div>
+        </a>
     <a class="button" href="/#/score">LEAVE GAME</a>
     <a class="button"></a>
 </div>
 
 <div class="canvas">
-    
-    
-    <div class="game"></div>
-
-    <div class="optModal" ng-if="optMenu">
-        <p class="optmodal">OPTIONS</p>
-        <button class="optButton">MUSIC</button>
-        <button class="optButton">SOUND</button>        
+    <div class="game">       
+        <div class="psMod" ng-if="pause">PAUSED</div>      
     </div>
-    
 </div>
 
 <div class="margin">

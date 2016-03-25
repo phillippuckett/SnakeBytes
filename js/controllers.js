@@ -1,25 +1,25 @@
 angular.module('snakeBytes')
-    .controller('gameCtrl', function ($scope, $window) {
-        // $scope.gameHeader = "GAME HEADER";
-        // console.log("GAME CONTROLLER");
+    .controller('scoreCtrl', function ($scope) {
+        // console.log("SCORE CONTROLLER");
         
         /*Toggle Option Modal--------------------*/
         $scope.optButton = false;
         $scope.optToggle = function () {
-            $scope.optMenu = !$scope.optMenu;
-            // console.log('TOGGLE');
+            $scope.options = !$scope.options;
+            // console.log('OPTIONS TOGGLE');
+        }
+    });
+    
+angular.module('snakeBytes')
+    .controller('gameCtrl', function ($scope, $window) {
+        // console.log("GAME CONTROLLER");
+        
+        /*Toggle Pause Modal--------------------*/
+        $scope.psButton = false;
+        $scope.psToggle = function () {
+            $scope.pause = !$scope.pause;
+            // console.log('PAUSE TOGGLE');
         }
     });
 
-angular.module('snakeBytes')
-    .controller('mainCtrl', function ($scope) {
-        // $scope.gameHeader = "MAIN HEADER";
-        // console.log("MAIN CONTROLLER");
-    });
-
-angular.module('snakeBytes')
-    .controller('scoreCtrl', function ($scope) {
-        // $scope.gameHeader = "SCOREBOARD HEADER";
-        // console.log("SCORE CONTROLLER");
-    });
     
