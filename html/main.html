@@ -1,18 +1,26 @@
-<div id="header">
-    <a id="headerButton" ng-click="optToggle()">OPTIONS</a>
-    <a id="headerButton" href="/#/score">SCOREBOARD</a>
-    <a id="headerButton" href="/#/game">PLAY GAME</a>
+<div class="title">SNAKE BYTES</div>
+
+<div class="margin">
+    <a class="button"></a>
+    <a class="button" href="/#/score">SCOREBOARD</a>
+    <a class="button" href="/#/game">PLAY GAME</a>
+    <a class="button"></a>
 </div>
 
-<div class="canvas"></div>
+<div class="canvas">
 
-<div class="footer">
-    <div class="footerButton"></div>
-    <div class="footerButton"></div>
-    <div class="footerButton"></div>
+    <div class="optModal" ng-if="optMenu">
+        <p>OPTIONS</p>
+        <button class="optButton">RESUME GAME</button>
+    </div>
+
 </div>
 
-<div class="optModal" ng-if="optMenu">
-    <p>OPTIONS</p>
-        <button class="optButton" ng-click="optToggle();">RESUME GAME</button>
+<div class="margin">
+    <div class="button"></div>
+    <div class="button"></div>
+    <div class="button"></div>
+    <div class="button"></div>
 </div>
+
+    <div class="copyright">&#169{{date}} @PHILLIPPUCKETT88</div>
