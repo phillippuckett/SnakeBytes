@@ -6,7 +6,7 @@
         <div class="psTxt" ng-if="!pause">PAUSE</div>
         <div class="psTxt" ng-if="pause">RESUME</div>
         </a>
-    <a class="button" href="/#/score">LEAVE GAME</a>
+    <a class="button" href="/#/score" onkeypress="quit()">LEAVE GAME</a>
     <a class="button"></a>
 </div>
 
@@ -14,6 +14,7 @@
     <div class="game">       
         <div class="psMod" ng-if="pause">PAUSED</div>      
     </div>
+</div>
 </div>
 
 <div class="margin">
