@@ -5,15 +5,23 @@
     <a class="button" ng-click="psToggle()">
         <div class="psTxt" ng-if="!pause">PAUSE</div>
         <div class="psTxt" ng-if="pause">RESUME</div>
-        </a>
-    <a class="button" href="/#/score" onkeypress="quit()">LEAVE GAME</a>
+    </a>
+    <a class="button" href="/#/score">LEAVE GAME</a>
     <a class="button"></a>
 </div>
 
-<div class="canvas">
-    <div class="game">       
-        <div class="psMod" ng-if="pause">PAUSED</div>      
+<div class="backDrop">
+
+    <div class="game">
+        <div class="psMod" ng-if="pause">PAUSED</div>
+        <canvas id="canvas" class="game" ng-keypress="onKeypress($event)" tabindex="0"></canvas>
     </div>
+
+
+    <!--<div ng-controller="overCtrl">GAME OVER!
+            <input id="submit" ng-keyPress="onKeypress($event, playerName)" ng-model="playerName" class="gameOverModal" type="text">
+    </div>-->
+
 </div>
 </div>
 

@@ -1,5 +1,5 @@
-var columns = 25;
-var rows = 25;
+var columns = 30;
+var rows = 30;
 var empty = 0;
 var snake = 1;
 var fruit = 2;
@@ -87,26 +87,27 @@ var setSnake = {
 };
 
 var setFood = function () {
-    var emptyGrid = [];
-    for (var x = 1; x < grid.length - 2; x++) {
-        for (var y = 1; y < grid.height - 2; y++) {
-            if (grid.get(x, y) === empty) {
-                emptyGrid.push({ x: x, y: y });
+    var emptyCell = [];
+    for (var x = 1; x < setGrid.width - 2; x++) {
+        for (var y = 1; y < setGrid.height - 2; y++) {
+            if (setGrid.get(x, y) === empty) {
+                emptyCell.push({ x: x, y: y });
             }
         }
     }
-    var randomPosition = emptyGrid[Math.round(Math.random() * (emptyGrid.length - 1))];
-    grid.set(FRUIT, randomPosition.x, randomPosition.y);
+    
+    var randomPosition = emptyCell[Math.round(Math.random() * (emptyCell.length - 1))];
+    setGrid.set(fruit, randomPosition.x, randomPosition.y);
 };
 
-var start = function () {
+var main = function () {
     stopGame = false;
 
     canvas = document.getElementById('canvas');
     canvas.height = rows * 15;
     canvas.width = columns * 15;
     context = canvas.getContext('2d');
-    context.font = '5vw Slackey';
+    // context.font = '1vw Slackey';
     frames = 0;
     keyState = {};
 
@@ -127,13 +128,12 @@ var start = function () {
 
 var init = function () {
     playerScore = 0;
-    grid.init(empty, columns, rows);
-
+    setGrid.init(empty, columns, rows);
     var startPosition = { x: Math.floor(columns / 2), y: rows - 1 };
     setSnake.init(up, startPosition.x, startPosition.y);
-    grid.set(snake, startPosition.x, startPosition.y);
+    setGrid.set(snake, startPosition.x, startPosition.y);
     setFood();
-};
+}
 
 var loop = function () {
     if (!pauseGame && !quitGame && !stopGame) {
@@ -165,70 +165,69 @@ var update = function () {
             quitGame = false;
         }
     }
+    
     if (frames % 5 === 0) {
 
         var nx = snake.last.x;
         var ny = snake.last.y;
 
-        switch (snake.direction) {
+        switch (setSnake.direction) {
             case left:
                 nx--;
                 break;
-
             case up:
                 ny--;
                 break;
-
             case right:
                 nx++;
                 break;
-
             case down:
                 ny++;
                 break;
         }
 
-        if (1 > nx || nx > grid.width - 2 || 1 > ny || ny > grid.height - 2 || grid.get(nx, ny) === snake) {
-            gameOver = true;
+        if (1 > nx || nx > setGrid.width - 2 || 1 > ny || ny > setGrid.height - 2 || setGrid.get(nx, ny) === snake) {
+            stopGame = true;
 
             setTimeout(function () {
-                $('div#gameOverMenu').css('display', 'block');
+                $('div.gameOverMenu').css('display', 'block');
             }, 1000);
             angular.element(document.getElementById('gameOverMenu')).scope().stopGame();
         }
 
-        if (grid.get(nx, ny) === fruit) {
+        if (setGrid.get(nx, ny) === fruit) {
             playerScore++;
             setFood();
         } else {
-            var tail = snake.remove();
-            grid.set(empty, tail.x, tail.y);
+            var tail = setSnake.remove();
+            setGrid.set(empty, tail.x, tail.y);
         }
-        grid.set(snake, nx, ny);
+        setGrid.set(snake, nx, ny);
         snake.insert(nx, ny);
     }
 };
 
 var draw = function () {
-    var tileHeight = canvas.height / grid.height;
-    var tileWidth = canvas.width / grid.width;
+    var tileHeight = canvas.height / setGrid.height;
+    var tileWidth = canvas.width / setGrid.width;
 
-    for (var x = 0; x < grid.width; x++) {
-        for (var y = 0; y < grid.height; y++) {
-            switch (grid.get(x, y)) {
+    for (var x = 0; x < setGrid.width; x++) {
+        for (var y = 0; y < setGrid.height; y++) {
+            switch (setGrid.get(x, y)) {
                 case empty:
-                    context.fillStyle = "darkgreen";
+                    context.fillStyle = "rgba(0,0,0,0)";
                     break;
                 case snake:
-                    context.fillStyle = "darkorange";
+                    context.fillStyle = "rgb(50,200,50)";
                     break;
                 case fruit:
-                    context.fillStyle = "darkred";
+                    context.fillStyle = "rgb(200,0,0)";
                     break;
             }
             context.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
         }
     }   
-    context.fillStyle = "darkorange";
-    context.fillText("playerScore: " + playerScore, 10, canvas.height - 10);    
+    context.fillStyle = "rgba(255,255,255,.5)";
+    // context.font = '1vw Slackey';
+    context.fillText("playerScore: " + playerScore, 10, canvas.height - 15);    
 };

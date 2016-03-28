@@ -19,3 +19,8 @@ angular.module('snakeBytes')
             // console.log('PAUSE TOGGLE');
         }
     });
+
+angular.module('snakeBytes')
+    .controller('gameOverCtrl', function ($scope, $window, $state) {
+        // console.log("GAMEOVER CONTROLLER");
+    });
