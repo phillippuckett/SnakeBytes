@@ -6,7 +6,7 @@
         <div class="psTxt" ng-if="!pause">PAUSE</div>
         <div class="psTxt" ng-if="pause">RESUME</div>
     </a>
-    <a class="button" href="/#/score">LEAVE GAME</a>
+    <a class="button" href="/#/score" onkeypress="quit()">LEAVE GAME</a>
     <a class="button"></a>
 </div>
 
@@ -17,10 +17,11 @@
         <canvas id="canvas" class="game" ng-keypress="onKeypress($event)" tabindex="0"></canvas>
     </div>
 
-
-    <!--<div ng-controller="overCtrl">GAME OVER!
-            <input id="submit" ng-keyPress="onKeypress($event, playerName)" ng-model="playerName" class="gameOverModal" type="text">
-    </div>-->
+    <div class="gameOverMenu">
+        <div class="gameOverModal">GAME OVER!
+            <input type="text" class="submission" onsubmit="display: none;">
+        </div>
+    </div>
 
 </div>
 </div>

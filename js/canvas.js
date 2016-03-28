@@ -1,21 +1,21 @@
-var columns = 30;
-var rows = 30;
+var columns = 25;
+var rows = 25;
 var empty = 0;
 var snake = 1;
-var fruit = 2;
+var food = 2;
 
-var left = 0;
 var up = 1;
 var right = 2;
 var down = 3;
+var left = 0;
 
-var keyLeft = 37;
 var keyUp = 38;
 var keyRight = 39;
 var keyDown = 40;
+var keyLeft = 37;
 
-var keyA = 65;
 var keyW = 87;
+var keyA = 65;
 var keyD = 68;
 var keyS = 83;
 
@@ -35,31 +35,31 @@ var quit = function () {
 
 var canvas;
 var context;
-var keyState;
+var keystate;
 var frames;
-var playerScore;
+var score;
 
 var setGrid = {
-    height: null,
     width: null,
+    height: null,
     _grid: null,
 
-    init: function (direction, column, row) {
-        this.height = row;
-        this.width = column;
+    init: function (d, c, r) {
+        this.width = c;
+        this.height = r;
         this._grid = [];
-        for (var x = 0; x < column; x++) {
+        for (var x = 0; x < c; x++) {
             this._grid.push([]);
-            for (var y = 0; y < row; y++) {
-                this._grid[x].push(direction);
+            for (var y = 0; y < r; y++) {
+                this._grid[x].push(d);
             }
         }
     },
 
-    set: function (value, x, y) {
-        this._grid[x][y] = value;
+    set: function (val, x, y) {
+        this._grid[x][y] = val;
     },
-
+    
     get: function (x, y) {
         return this._grid[x][y];
     }
@@ -70,8 +70,8 @@ var setSnake = {
     last: null,
     _queue: null,
 
-    init: function (direction, x, y) {
-        this.direction = direction;
+    init: function (d, x, y) {
+        this.direction = d;
         this._queue = [];
         this.insert(x, y);
     },
@@ -95,28 +95,28 @@ var setFood = function () {
             }
         }
     }
-    
-    var randomPosition = emptyCell[Math.round(Math.random() * (emptyCell.length - 1))];
-    setGrid.set(fruit, randomPosition.x, randomPosition.y);
+
+    var randomPosition = emptyCell[Math.round(Math.random() * (emptyCell.length - 1))]
+    setGrid.set(food, randomPosition.x, randomPosition.y);
 };
 
 var main = function () {
     stopGame = false;
 
-    canvas = document.getElementById('canvas');
-    canvas.height = rows * 15;
+    canvas = document.getElementById("canvas")
     canvas.width = columns * 15;
-    context = canvas.getContext('2d');
-    // context.font = '1vw Slackey';
+    canvas.height = rows * 15;
+    context = canvas.getContext("2d");
+    context.font = "10px Slackey";
     frames = 0;
-    keyState = {};
+    keystate = {};
 
-    document.addEventListener('keyDown', function (event) {
-        keyState[event.keyCode] = true;
+    document.addEventListener("keydown", function (event) {
+        keystate[event.keyCode] = true;
     })
-
-    document.addEventListener('keyUp', function (event) {
-        delete keyState[event.keyCode];
+    
+    document.addEventListener("keyup", function (event) {
+        delete keystate[event.keyCode];
     })
 
     init();
@@ -127,13 +127,13 @@ var main = function () {
 };
 
 var init = function () {
-    playerScore = 0;
+    score = 0;
     setGrid.init(empty, columns, rows);
     var startPosition = { x: Math.floor(columns / 2), y: rows - 1 };
     setSnake.init(up, startPosition.x, startPosition.y);
     setGrid.set(snake, startPosition.x, startPosition.y);
     setFood();
-}
+};
 
 var loop = function () {
     if (!pauseGame && !quitGame && !stopGame) {
@@ -145,19 +145,20 @@ var loop = function () {
 
 var update = function () {
     frames++;
-    if (keyState[keyLeft] && snake.direction !== right || keyState[keyA] && snake.direction !== right) {
-        snake.direction = left;
+
+    if (keystate[keyLeft] && setSnake.direction !== right || keystate[keyA] && setSnake.direction !== right) {
+        setSnake.direction = left;
     }
-    if (keyState[keyUp] && snake.direction !== down || keyState[keyW] && snake.direction !== down) {
-        snake.direction = up;
+    if (keystate[keyUp] && setSnake.direction !== down || keystate[keyW] && setSnake.direction !== down) {
+        setSnake.direction = up;
     }
-    if (keyState[keyRight] && snake.direction !== left || keyState[keyD] && snake.direction !== left) {
-        snake.direction = right;
+    if (keystate[keyRight] && setSnake.direction !== left || keystate[keyD] && setSnake.direction !== left) {
+        setSnake.direction = right;
     }
-    if (keyState[keyDown] && snake.direction !== up || keyState[keyS] && snake.direction !== up) {
-        snake.direction = down;
+    if (keystate[keyDown] && setSnake.direction !== up || keystate[keyS] && setSnake.direction !== up) {
+        setSnake.direction = down;
     }
-    if (keyState[keyQ]) {
+    if (keystate[keyQ]) {
         if (quitGame === false) {
             quitGame = true;
             quit();
@@ -165,11 +166,11 @@ var update = function () {
             quitGame = false;
         }
     }
-    
+
     if (frames % 5 === 0) {
 
-        var nx = snake.last.x;
-        var ny = snake.last.y;
+        var nx = setSnake.last.x;
+        var ny = setSnake.last.y;
 
         switch (setSnake.direction) {
             case left:
@@ -190,44 +191,45 @@ var update = function () {
             stopGame = true;
 
             setTimeout(function () {
-                $('div.gameOverMenu').css('display', 'block');
+                $('div#gameOverMenu').css('display', 'block');
             }, 1000);
             angular.element(document.getElementById('gameOverMenu')).scope().stopGame();
         }
 
-        if (setGrid.get(nx, ny) === fruit) {
-            playerScore++;
+        if (setGrid.get(nx, ny) === food) {
+            score++;
             setFood();
         } else {
             var tail = setSnake.remove();
             setGrid.set(empty, tail.x, tail.y);
         }
         setGrid.set(snake, nx, ny);
-        snake.insert(nx, ny);
+        setSnake.insert(nx, ny);
     }
 };
 
 var draw = function () {
-    var tileHeight = canvas.height / setGrid.height;
-    var tileWidth = canvas.width / setGrid.width;
+    
+    var tw = canvas.width / setGrid.width;
+    var th = canvas.height / setGrid.height;
 
     for (var x = 0; x < setGrid.width; x++) {
         for (var y = 0; y < setGrid.height; y++) {
             switch (setGrid.get(x, y)) {
                 case empty:
-                    context.fillStyle = "rgba(0,0,0,0)";
+                    context.fillStyle = "rgba(0,0,0,1)";
                     break;
                 case snake:
-                    context.fillStyle = "rgb(50,200,50)";
+                    context.fillStyle = "rgba(50,200,50,1)";
                     break;
-                case fruit:
-                    context.fillStyle = "rgb(200,0,0)";
+                case food:
+                    context.fillStyle = "rgba(200,0,0,1)";
                     break;
             }
-            context.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
+            context.fillRect(x * tw, y * th, tw, th);
         }
-    }   
-    context.fillStyle = "rgba(255,255,255,.5)";
-    // context.font = '1vw Slackey';
-    context.fillText("playerScore: " + playerScore, 10, canvas.height - 15);    
+    }
+    context.fillStyle = "rgba(255,255,255,.75)";
+    context.font = '1vw Slackey';
+    context.fillText("SCORE: " + score, 10, canvas.height - 10);
 };
