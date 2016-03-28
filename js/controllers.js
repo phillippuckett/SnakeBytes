@@ -56,11 +56,13 @@ angular.module('snakeBytes')
 
 angular.module('snakeBytes')
     .controller('gameOverCtrl', function ($scope, $window, $state) {
-        // console.log("GAMEOVER CONTROLLER");
+        console.log("GAMEOVER CONTROLLER");
         
-        var gameOverMenu = $window.document.getElementById('canvas');
-        if (gameOverMenu) {
-            gameOverMenu.focus();
+        var goMod = $window.document.getElementById('canvas');
+        if (goMod) {
+            goMod.focus();
+                    console.log(gameOver);
+            
         }
 
         $scope.onKeypress = function (event, playerName) {

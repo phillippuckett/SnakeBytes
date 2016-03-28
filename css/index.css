@@ -145,18 +145,21 @@ width: 57.5vh;
 -webkit-box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
 box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
-/*background-color: rgba(0,0,0,.25);*/
+background-color: rgba(0,0,0,.75);
 margin: auto; left:0;right:0; 
 }
 .psMod {    
     font-family: 'Slackey', cursive;
     font-size: 5vw;
     color: white;
-    text-shadow: -4px 4px 2px rgba(0,0,0,1);
+    text-shadow: -4px 4px 2px rgba(0,0,0,.75);
     text-align: center;
 height:57.5vh;
 width: 57.5vh;
-background-color: rgba(0,0,0,.75);
+-webkit-box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
+box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
+background-color: rgba(0,0,0,.25);
 padding-top: 25vh;
 margin: auto;
 }
@@ -170,38 +173,50 @@ margin: auto;
     color: white;
     text-shadow: -4px 4px 2px rgba(0,0,0,1);
 }
-.gameOverMenu{
-    display: none;
-    border: 4px solid orangered;
-    border-radius: 50px;
-    background-color: midnightblue;
-    font-size: 70px;
+.goMod{
     font-family: 'Slackey', cursive;
-    color: orangered;
+    font-size: 2.5vw;
+    color: white;
+    text-shadow: -4px 4px 2px rgba(0,0,0,1);
     text-align: center;
-    min-height: 200px; max-height: 200px;
-    min-width: 200px; max-width: 600px;
-    position: fixed;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;     
-    -webkit-box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
-    -moz-box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
-    box-shadow: 10px 10px 300px 200px rgba(0,0,0,0.51);
+display: none;
+/*border: 4px solid rgba(0,255,0,1);*/
+border-radius: 1.25vw; 
+box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
+-webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+-moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+background-image: url('/media/stone.jpg');
+background-repeat: no-repeat; 
+background-size: cover;
+height: 28.75vh;
+width: 57.5vh;
+position: absolute;
+overflow-y: auto;
+margin: auto;top:10.625vh;right:0;bottom:0;left:0;        
 }
 
-.gameOverModal {
-    border: 2px solid orangered;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.5);
+.goText {
     font-family: 'Slackey', cursive;
-    font-size: 30px;
-    color: coral;
+    font-size: 2.5vw;
+    color: white;
+    text-shadow: -4px 4px 2px rgba(0,0,0,1);
     text-align: center;
-    font-size: 30px;
-    min-height: 50px;
-    min-width: 100px;
-    margin: auto;
+/*border: 1px solid rgb(255,0,0); */
+margin: auto;
+}
+.goSubmit {
+    font-family: 'Slackey', cursive;
+    font-size: 2.5vw;
+    color: white;
+    text-shadow: -4px 4px 2px rgba(0,0,0,1);
+    text-align: center;  
+border-radius: .5vw;    
+border: 1px solid rgba(0,0,0,0);    
+border-bottom: 1px solid rgba(255,255,200,.5);    
+-webkit-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.75);
+box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.75);
+background-color:rgba(0, 0, 0,.5);    
+height: 10vh;
+width: 75%;
 }

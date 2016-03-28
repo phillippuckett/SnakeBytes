@@ -191,9 +191,9 @@ var update = function () {
             stopGame = true;
 
             setTimeout(function () {
-                $('div#gameOverMenu').css('display', 'block');
+                $('div.goMod').css('display', 'block');
             }, 1000);
-            angular.element(document.getElementById('gameOverMenu')).scope().stopGame();
+            angular.element(document.getElementById('goMod')).scope().stopGame();
         }
 
         if (setGrid.get(nx, ny) === food) {
