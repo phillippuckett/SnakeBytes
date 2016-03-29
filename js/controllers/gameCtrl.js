@@ -28,12 +28,6 @@ angular.module('snakeBytes')
                     console.log('QUIT', quitGame);
                     break;
             }
-            console.log('ON KEY PRESS', event.keyCode);
-        }
-
-        $scope.stopGame = function () {
-            $state.go('score');
-            console.log('GAME OVER', stopGame);
         }
 
         var currentDate = new Date().getFullYear();

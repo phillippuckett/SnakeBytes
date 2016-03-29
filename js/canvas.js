@@ -196,7 +196,6 @@ var update = function () {
             // angular.element(document.getElementById('goMod')).scope().stopGame;
             angular.element(document.getElementById('goMod')).scope(stopGame);
         }
-        console.log('STOP GAME', stopGame);
 
         if (setGrid.get(nx, ny) === food) {
             score++;
