@@ -2,3 +2,7 @@
 Make buttons function
 Make user keys function
 Link gameover to scoreboard
+
+if !stopGame, then we activate the modal
+when the modal is ENTERed, we route to SCORE
+A function that ca  do such a thing may be necessary

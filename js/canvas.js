@@ -29,7 +29,6 @@ var keyQ = 113;
 var quitGame = false;
 var quit = function () {
     if (quitGame === true) {
-        console.log(quitGame);
     }
 };
 
@@ -44,7 +43,7 @@ var setGrid = {
     height: null,
     _grid: null,
 
-    init: function (d, c, r) {
+    initiate: function (d, c, r) {
         this.width = c;
         this.height = r;
         this._grid = [];
@@ -59,7 +58,7 @@ var setGrid = {
     set: function (val, x, y) {
         this._grid[x][y] = val;
     },
-    
+
     get: function (x, y) {
         return this._grid[x][y];
     }
@@ -70,7 +69,7 @@ var setSnake = {
     last: null,
     _queue: null,
 
-    init: function (d, x, y) {
+    initiate: function (d, x, y) {
         this.direction = d;
         this._queue = [];
         this.insert(x, y);
@@ -87,6 +86,7 @@ var setSnake = {
 };
 
 var setFood = function () {
+
     var emptyCell = [];
     for (var x = 1; x < setGrid.width - 2; x++) {
         for (var y = 1; y < setGrid.height - 2; y++) {
@@ -100,7 +100,7 @@ var setFood = function () {
     setGrid.set(food, randomPosition.x, randomPosition.y);
 };
 
-var main = function () {
+var start = function () {
     stopGame = false;
 
     canvas = document.getElementById("canvas")
@@ -114,23 +114,23 @@ var main = function () {
     document.addEventListener("keydown", function (event) {
         keystate[event.keyCode] = true;
     })
-    
+
     document.addEventListener("keyup", function (event) {
         delete keystate[event.keyCode];
     })
 
-    init();
+    initiate();
     if (!startGame) {
         startGame = true;
         loop();
     }
 };
 
-var init = function () {
+var initiate = function () {
     score = 0;
-    setGrid.init(empty, columns, rows);
+    setGrid.initiate(empty, columns, rows);
     var startPosition = { x: Math.floor(columns / 2), y: rows - 1 };
-    setSnake.init(up, startPosition.x, startPosition.y);
+    setSnake.initiate(up, startPosition.x, startPosition.y);
     setGrid.set(snake, startPosition.x, startPosition.y);
     setFood();
 };
@@ -193,8 +193,10 @@ var update = function () {
             setTimeout(function () {
                 $('div.goMod').css('display', 'block');
             }, 1000);
-            angular.element(document.getElementById('goMod')).scope().stopGame();
+            // angular.element(document.getElementById('goMod')).scope().stopGame;
+            angular.element(document.getElementById('goMod')).scope(stopGame);
         }
+        console.log('STOP GAME', stopGame);
 
         if (setGrid.get(nx, ny) === food) {
             score++;
@@ -209,7 +211,7 @@ var update = function () {
 };
 
 var draw = function () {
-    
+
     var tw = canvas.width / setGrid.width;
     var th = canvas.height / setGrid.height;
 
