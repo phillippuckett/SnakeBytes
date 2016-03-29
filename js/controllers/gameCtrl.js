@@ -19,7 +19,7 @@ angular.module('snakeBytes')
 
                 case 112:
                     pauseGame = !pauseGame;
-                    $scope.pauseGame = pauseGame;
+                    $scope.pause = !$scope.pause;
                     console.log('PAUSE', pauseGame);
                     break;
                 
