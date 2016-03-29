@@ -6,6 +6,11 @@ angular.module('snakeBytes')
             $scope.pause = !$scope.pause;
         }
 
+        $scope.qtButton = false;
+        $scope.qtToggle = function () {
+            $scope.quit = !$scope.quit;
+        }
+
         start();
 
         var canvas = $window.document.getElementById('canvas');
@@ -14,7 +19,6 @@ angular.module('snakeBytes')
         }
 
         $scope.onKeypress = function (event) {
-            // console.log('ON KEY PRESS', event.keyCode);
             switch (event.keyCode) {
 
                 case 112:
@@ -22,8 +26,10 @@ angular.module('snakeBytes')
                     $scope.pause = !$scope.pause;
                     console.log('PAUSE', pauseGame);
                     break;
-                
+
                 case 113:
+                    quitGame = !quitGame;
+                    $scope.quit = !$scope.quit;
                     $state.go('score');
                     console.log('QUIT', quitGame);
                     break;

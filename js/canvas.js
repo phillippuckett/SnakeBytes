@@ -1,3 +1,9 @@
+var canvas;
+var context;
+var keystate;
+var frames;
+var score;
+
 var columns = 25;
 var rows = 25;
 var empty = 0;
@@ -9,34 +15,21 @@ var right = 2;
 var down = 3;
 var left = 0;
 
+var pauseGame = false;
+var quitGame = false;
+var startGame = false;
+var stopGame = false;
+
 var keyUp = 38;
 var keyRight = 39;
 var keyDown = 40;
 var keyLeft = 37;
-
 var keyW = 87;
 var keyA = 65;
 var keyD = 68;
-var keyS = 83;
-
 var keyP = 80;
-var pauseGame = false;
-
-var startGame = false;
-var stopGame = false;
-
 var keyQ = 113;
-var quitGame = false;
-var quit = function () {
-    if (quitGame === true) {
-    }
-};
-
-var canvas;
-var context;
-var keystate;
-var frames;
-var score;
+var keyS = 83;
 
 var setGrid = {
     width: null,
@@ -101,6 +94,8 @@ var setFood = function () {
 };
 
 var start = function () {
+    pauseGame = false;
+    quitGame = false;
     stopGame = false;
 
     canvas = document.getElementById("canvas")
