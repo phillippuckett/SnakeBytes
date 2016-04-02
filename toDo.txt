@@ -1,8 +1,19 @@
+FRONT END
 
-Make buttons function
-Make user keys function
-Link gameover to scoreboard
+Score    
+    + ng-click (optToggle)
+    - keyEnter (playGame)
+Game
+    + KeyLeftUpRightDown
+    + KeyWASD
+    + keyQ
+    - ng-click (escape)
+    + keyP
+    - ng-click (Pause/Resume)
+GO Modal
+    - keyEnter (submitScore)
 
-if !stopGame, then we activate the modal
-when the modal is ENTERed, we route to SCORE
-A function that ca  do such a thing may be necessary
+BACK END
+
+- Score Model: Name, Score
+- Score Ctrl: Score function

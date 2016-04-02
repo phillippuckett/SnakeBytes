@@ -1,15 +1,5 @@
 angular.module('snakeBytes')
-    .controller('gameCtrl', function ($scope, $window, $state) {
-
-        $scope.psButton = false;
-        $scope.psToggle = function () {
-            $scope.pause = !$scope.pause;
-        }
-
-        $scope.qtButton = false;
-        $scope.qtToggle = function () {
-            $scope.quit = !$scope.quit;
-        }
+    .controller('gameCtrl', function($scope, $window, $state) {
 
         start();
 
@@ -18,20 +8,40 @@ angular.module('snakeBytes')
             canvas.focus();
         }
 
-        $scope.onKeypress = function (event) {
+        $scope.psToggle = function() {
+            $scope.keyP = !$scope.keyP;
+        }
+
+        $scope.qtToggle = function() {
+            $scope.keyQ = !$scope.keyQ;
+
+        }
+
+        $scope.playToggle = function() {
+            $scope.keySpace = !$scope.keySpace;
+        }
+
+        $scope.onKeypress = function(event) {
             switch (event.keyCode) {
 
                 case 112:
+                    $scope.keyP = !$scope.keyP;
                     pauseGame = !pauseGame;
-                    $scope.pause = !$scope.pause;
                     console.log('PAUSE', pauseGame);
                     break;
 
                 case 113:
+                    $scope.keyQ = !$scope.keyQ;
                     quitGame = !quitGame;
-                    $scope.quit = !$scope.quit;
                     $state.go('score');
                     console.log('QUIT', quitGame);
+                    break;
+
+                case 32:
+                    playGame = !playGame;
+                    $scope.keySpace = !$scope.keySpace;
+                    $state.go('game');
+                    console.log('PLAY', playGame);
                     break;
             }
         }

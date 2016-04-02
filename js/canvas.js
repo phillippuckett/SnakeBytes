@@ -98,7 +98,7 @@ var start = function () {
     quitGame = false;
     stopGame = false;
 
-    canvas = document.getElementById("canvas")
+    canvas = document.getElementById('canvas');
     canvas.width = columns * 15;
     canvas.height = rows * 15;
     context = canvas.getContext("2d");
@@ -156,7 +156,6 @@ var update = function () {
     if (keystate[keyQ]) {
         if (quitGame === false) {
             quitGame = true;
-            quit();
         } else {
             quitGame = false;
         }
