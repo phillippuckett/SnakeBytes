@@ -1,0 +1,32 @@
+<div class="title">SNAKE BYTES</div>
+
+<div class="margin">
+    <a class="button"></a>
+    <a class="button" href="/#/game">PLAY GAME</a>
+    <a class="button"></a>
+</div>
+
+<div class="backDrop">
+    <div class="score">
+        <div class="scoreRow">
+            <p>SCOREBOARD</p>
+        </div>
+        <div class="scoreRow">
+            <div class="scoreCol">Names</div>
+            <div class="scoreCol">Points</div>
+        </div>
+    </div>
+    <div class="optMod" ng-if="optionsGame">
+        <p class="optmodal">OPTIONS</p>
+        <button class="optButton">MUSIC</button>
+        <button class="optButton">SOUND</button>
+    </div>
+</div>
+
+<div class="margin">
+    <div class="button"></div>
+    <a class="button" ng-click="options()">OPTIONS</a>
+    <div class="button"></div>
+</div>
+
+<div class="copyright">&#169{{date}} PHILLIP PUCKETT</div>
