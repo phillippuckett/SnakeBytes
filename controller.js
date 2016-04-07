@@ -4,8 +4,7 @@ module.exports = {
 
     createScore: function(req, res) {
         scores
-            .create(req.body)
-            .exec(function(err, scoreData) {
+            .create(req.body).exec(function(err, scoreData) {
                 if (err) { console.error(err); return res.status(500).json(err); }
                 else { res.status(200).json('CREATE', scoreData); }
             })
