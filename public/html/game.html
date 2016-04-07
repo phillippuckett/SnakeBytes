@@ -17,10 +17,10 @@
         <div class="psMod" ng-if="keyP">PAUSED</div>
         <canvas id="canvas" class="game" ng-keypress="onKeypress($event)" tabindex="0"></canvas>
     </div>
-    <form ng-submit="goSubmit()" ng-controller="goCtrl">
-        <div class="goMod">
+    <form ng-submit="createScore()" ng-controller="controller">
+        <div class="scoreSubmit">
             <p>GAME OVER</p>
-            <input type="text" class="goSubmit"><!--ng-model="score.playerName"-->
+            <input type="text" class="player" ng-model="scores.scores">
     </form>
     </div>
 </div>

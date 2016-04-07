@@ -185,10 +185,9 @@ var update = function () {
             stopGame = true;
 
             setTimeout(function () {
-                $('div.goMod').css('display', 'block');
+                $('div.scoreSubmit').css('display', 'block');
             }, 1000);
-            // angular.element(document.getElementById('goMod')).scope().stopGame;
-            angular.element(document.getElementById('goMod')).scope(stopGame);
+            angular.element(document.getElementById('scoreSubmit')).scope(stopGame);
         }
 
         if (setGrid.get(nx, ny) === food) {
