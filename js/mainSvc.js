@@ -1,0 +1,3 @@
+snake.service('mainSvc', function () {
+
+});
