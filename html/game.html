@@ -3,28 +3,31 @@
 
     <!--MENU-->
     <div class="margin">
-        <a class="button" ng-click="pause()">
+        <a class="button">
             <div ng-if="!pauseGame">PAUSE</div>
             <div ng-if="pauseGame">RESUME</div>
         </a>
         <a class="button"></a>
-        <a class="button" ng-click="quit()">QUIT</a>
+        <a class="button"></a>
     </div>
     <!--MENU-->
 
     <!--GAME-->
     <div class="bg">
         <div class="game">
-            <div class="psMod" ng-if="keyP">PAUSED</div>
-            <canvas id="canvas" class="game" ng-keypress="onKeypress($event)" tabindex="0"></canvas>
+            <div class="psMod">PAUSED</div>
+            <canvas id="canvas" class="game"></canvas>
         </div>
-        <form ng-submit="createScore()" ng-controller="mainCtrl">
+
+        <form ng-controller="mainCtrl">
             <div class="scoreSubmit">
-                <p>GAME OVER</p>
-                <input type="text" class="player" ng-model="scores.scores">
+                GAME OVER
+                <input type="text" class="player">
         </form>
+        
         </div>
     </div>
     <!--GAME-->
+    
 
 </div>

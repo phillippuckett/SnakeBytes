@@ -19,12 +19,25 @@
                 <div class="scol">Points</div>
             </div>
         </div>
-        <div class="optMod" ng-if="options">
+        <!--SCOREBOARD-->
+
+        <!--OPTIONS-->
+        <div class="optMod" ng-if="optionsGame">
             <p class="optmodal">OPTIONS</p>
             <button class="optButton">MUSIC</button>
             <button class="optButton">SOUND</button>
         </div>
     </div>
-    <!--SCOREBOARD-->
+    <!--OPTIONS-->
+
+    <!--BUTTONS-->
+    <div class="margin">
+        <div class="button"></div>
+        <a class="button" ng-click="options()">OPTIONS</a>
+        <div class="button"></div>
+    </div>
+    <!--BUTTONS-->
+
+    <div class="copyright">&#169{{date}} PHILLIP PUCKETT</div>
 
 </div>
