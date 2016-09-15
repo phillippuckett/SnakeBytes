@@ -1,98 +1,303 @@
 html { margin:0; padding:0; }
-body { margin:0; padding:0; }
 
-.container { 
-    font-family: 'Slackey', cursive; 
-    text-align: center; 
-    color: white;
-
+body { 
+    /*border: 1px solid white;*/
     margin:0; padding:0; 
-    background-color: rgb(0,0,0); 
-    min-height:100vh; max-height:1024px;
-    min-width: 100%; max-width: 768px;
-}
-
-.title { 
-    margin:0; padding:.5% 0; 
-    text-shadow: -4px 4px 2px rgba(0,0,0,1);
+    background-color: rgb(0,0,0);
+    font-family: 'Slackey', cursive; 
+    text-align: center;
     color: rgb(255,255,255); 
-    font-size: 675%;
-
-    box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
-    -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
-    background-image: url('img/jungle.jpg');
-    background-repeat: no-repeat; 
-    background-size: cover;
-    width: 100%;
 }
 
-.margin { 
-    text-shadow: -4px 4px 2px rgba(0, 0, 0, 1); 
-    display: inline-flex; 
-    width: 100%;
+
+
+
+
+
+
+/*MOBILE*/
+@media screen and  (max-width: 675px) {
+
+    .titleDesktop { display: none; }
+    .titleMobile { 
+        /*border: 1px solid red;*/
+        margin: 1.25% 0; padding: 2.5% 0; 
+        font-size: 250%;
+        text-shadow: 0px 4px 2px rgba(0,0,0,1);
+        box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
+        -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+        -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+        background-image: url('img/jungleTitle.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover;
+        width: 100%;
+    }
+
+    .titleText { 
+        margin: 0; padding:0;
+        text-shadow: 0px 4px 2px rgba(0,0,0,.75);
+    }
+
+    .marginDesktop { display: none; }
+    .marginMobile { 
+        /*border: 1px solid gold;*/
+        text-shadow: -4px 4px 2px rgba(0, 0, 0, 1); 
+        display: inline-flex; 
+        width: 100%;
+    }
+
+
+    .button { 
+        /*border: 1px solid green;*/
+        border-radius: 12.5%;
+        margin: 1.25% .5%; padding:0;
+        color: rgba(0,0,0,.675);
+        font-size: 15px;
+        text-shadow: 0px 3.75px 2.5px rgba(250, 250, 200,.75);
+        text-decoration: none;
+        height: 11.25vh;
+        width: 100%;
+
+        box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
+        -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+        -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+        background-image: url('img/stone.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover;
+        width:100%;
+    }
+
+    a.button:hover { 
+        color: rgba(255,255,255,1);  
+        text-shadow: -4px 4px 2px rgba(0, 0, 0, 1);
+        text-decoration: none; 
+    }
+
+    .background { 
+        /*border: 1px solid blue;*/
+        margin: 0; padding: 0;
+        box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
+        -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+        -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+        background-image: url('img/dirt.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover;   
+    }
+
+    #canvas {
+        border: 1px solid rgba(0,0,0,0);
+        margin: 0; padding: 0;
+        position: relative;
+        bottom: 0; top: 0;
+        height: 57.5vh;
+        width: 100%;
+    }
+
+    .score {
+        border: 2.5px solid rgba(255,255,255,.25);
+        margin: 0 auto; padding: 0;
+        text-shadow: -4px 4px 2px rgba(0,0,0,1);
+        border-radius: 1.25vw;
+        height: 57.5vh;
+        width: 75%;
+        overflow-y: auto;
+    }
+    .srow {
+        /*border: 1px solid red;*/
+        border: 1px solid rgba(255,255,255,.125);
+        margin: 0; padding: 0;
+        border-radius: .75vw;
+        display: inline-flex;
+        width: 100%;
+    }
+    .scol {
+        /*border: 1px solid gold;*/
+        margin: 0; padding: 0;
+        border-radius: .5vw;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .scoreSubmit{
+        /*border: 1px solid blue;*/
+        margin:0 auto; padding:0; 
+        font-size: 2.5vw;
+        text-shadow: -4px 4px 2px rgba(0,0,0,1);
+        text-align: center;
+        
+        display: none;
+        border-radius: 1.25vw; 
+        box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
+        -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+        -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
+        background-image: url('img/stone.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover;
+        height: 28.75vh;
+        width: 57.5vh;
+        position: absolute;
+        overflow-y: auto;       
+    }
+
+    .goText {
+        margin:0 auto; padding:0;
+        font-size: 2.5vw;
+        text-shadow: -4px 4px 2px rgba(0,0,0,1);
+        text-align: center;
+    }
+
+    .player {
+        font-size: 2.5vw;
+        text-shadow: -4px 4px 2px rgba(0,0,0,1);
+        text-align: center;
+
+        border-radius: .5vw;      
+        border-bottom: 1px solid rgba(255,255,200,.5);    
+        -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.75);
+        background-color:rgba(0, 0, 0,.5);    
+        height: 10vh;
+        width: 75%;
+    }
+
+    .copyrightMobile { 
+        /*border: 1px solid white;*/
+        margin: 2.5% 0; padding: 0;
+        position: fixed;
+        font-size: 7.5px;
+        width: 100%;
+    }
+
 }
 
-.button { 
-    margin: .5%; padding: 6% 0;
-    
-    color: rgba(0,0,0,.675);
-    font-size: 250%;
-    font-family: 'Slackey', cursive;
-    text-shadow: 0px 3.75px 2.5px rgba(250, 250, 200,.75);
-    text-decoration: none;
+/*MOBILE*/
 
-    box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
-    -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
-    background-image: url('img/stone.jpg');
-    background-repeat: no-repeat; 
-    background-size: cover;
-    width:100%;
-}
 
-a.button:hover { 
-    color: rgba(255,255,255,1);  
-    text-shadow: -4px 4px 2px rgba(0, 0, 0, 1);
-    text-decoration: none; 
-}
 
-.bg { 
-    width: 100%;
-    box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1); 
-    -webkit-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px -5px 30px 15px rgba(0,0,0,1);
-    background-image: url('img/dirt.jpg');
-    background-repeat: no-repeat; 
-    background-size: cover;   
-}
 
-.score {
-    font-size: 250%;
-    text-shadow: -4px 4px 2px rgba(0,0,0,1);
-    border-radius: 1.25vw;
-    height: 57.5vh;
-    width: 100%; max-width:57.5;
-    overflow-y: auto;
-    margin: auto;   
-}
-.srow {
-    border-radius: .75vw;
-    display: inline-flex;
-    width: 100%;
-}
-.scol {
-    border-radius: .5vw;
-    max-height: 200px;
-    width: 100%;
-}
 
-.game { 
-height:57.5vh;
-width: 100%; max-width:57.5;
--webkit-box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
-box-shadow: 0px 0px 2.5vw 1.25vw rgba(0,0,0,0.75);
-background-color: rgba(0,0,0,.75);
-margin: auto; left:0;right:0; 
+
+/*DESKTOP*/
+@media screen and  (min-width: 900px) {
+
+    body { 
+        /*border: 1px solid white;*/
+        background-image: url('img/jungleBackground.jpg');
+        background-repeat: no-repeat; 
+        background-size: auto;
+    }
+
+    .titleMobile { display: none; }
+    .titleDesktop { 
+        /*border: 1px solid red;*/
+        margin: 1.25%; padding: 0; 
+        background-color: rgba(255,255,255,.25);
+        box-shadow: 0px 5px 5px 5px rgba(0,0,0,.75); 
+        -webkit-box-shadow: 0px 5px 5px 5px rgba(0,0,0,.75);
+        -moz-box-shadow: 0px 5px 5px 5px rgba(0,0,0,.75);
+    }
+
+    .titleText { 
+        margin: 0; padding:0;
+        text-shadow: 0px 4px 2px rgba(0,0,0,.75);
+        font-size: 450%;
+    }
+
+    .marginMobile { display: none; }
+    .marginDesktop { 
+        /*border: 1px solid gold;*/
+        margin: 0; padding: 0;
+        text-shadow: none; 
+        display: inline-flex; 
+        width: 100%;
+    }
+
+    .button { 
+        /*border: 1px solid green;*/
+        margin: 1.25%; padding:0;
+        background-color: rgba(255,255,255,.5);
+        color: rgba(0,0,0,.675);
+        text-shadow: 0px 1.25px 2.5px rgba(255, 255, 255,.75);
+        font-size: 20px;
+        text-decoration: none;
+        width: 100%;
+        box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,.75); 
+        -webkit-box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,.75);
+        -moz-box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,.75);
+    }
+
+    a.button:hover { 
+        color: rgba(255,255,255,1);  
+        font-size: 20px;
+        text-shadow: 0 0 5px rgba(255,255,255,.75);
+        background-color: rgba(0,0,0,0);
+        text-decoration: none; 
+        box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,0); 
+        -webkit-box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,0);
+        -moz-box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,0);
+    }
+
+    .background { 
+        /*border: 1px solid blue;*/
+        margin: auto; padding: 0;
+        width: 100%; 
+    }
+
+    #canvas {
+        border: 1px solid rgba(0,0,0,0);
+        margin: 0; padding: 0;
+        height: 67.5vh;
+    }
+
+    .score {
+        margin: 0 auto; padding: 0;
+        top: 0; right: 0; bottom: 0; right: 0;
+        border: 2.5px solid rgba(255,255,255,.25);
+        background-color: rgba(255,255,255,.375);
+        text-shadow: 0px 4px 2px rgba(0,0,0,.75);
+        height: 65vh;
+        width: 75%;
+        overflow-y: auto;
+        box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,.75); 
+        -webkit-box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,.75);
+        -moz-box-shadow: 0px 2.5px 2.5px 2.5px rgba(0,0,0,.75);
+    }
+    .srow {
+        /*border: 1px solid red;*/
+        border: 1px solid rgba(255,255,255,.125);
+        margin: 0; padding: 0;
+        border-radius: .75vw;
+        display: inline-flex;
+        width: 100%;
+    }
+    .scol {
+        /*border: 1px solid gold;*/
+        margin: 0; padding: 0;
+        border-radius: .5vw;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .game { margin:0; padding:0; border: 1px solid green;}
+
+    .scoreSubmit{ 
+        /*border: 1px solid blue;*/
+        margin:0; padding:0; 
+        display: none;
+    }
+
+    .goText { margin:0; padding:0; border: 1px solid white; }
+
+    .player { margin:0; padding:0; border: 1px solid red; }
+
+    .copyrightDesktop { 
+        /*border: 1px solid white;*/
+        margin: 0; padding: 0;
+        text-shadow: 0px 2.5px 2.5px rgba(0,0,0,1);
+        font-size: 7.5px;
+    }
+
+    .copyrightMobile { display: none; }
 }
+/*DESKTOP*/

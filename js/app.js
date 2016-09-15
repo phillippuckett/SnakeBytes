@@ -5,7 +5,7 @@ var snake = angular.module('snake', ['ui.router'])
             .state('game', {
                 url: '/game',
                 templateUrl: '/html/game.html',
-                controller: 'mainCtrl'
+                controller: 'gameCtrl'
             })
 
             .state('score', {

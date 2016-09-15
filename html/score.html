@@ -1,43 +1,48 @@
-<div class="container">
-    <div class="title">SNAKE BYTES</div>
+<div class="titleMobile">
+    <p class="titleText">SNAKE</p>
+</div>
 
-    <!--MENU-->
-    <div class="margin">
-        <a class="button"></a>
-        <a class="button" href="/#/game">PLAY</a>
-        <a class="button"></a>
-    </div>
-    <!--MENU-->
+<div class="titleDesktop">
+    <p class="titleText">SNAKE</p>
+    <p class="copyrightDesktop">&#169{{date}} PHILLIP E PUCKETT</p>
+</div>
 
-    <!--SCOREBOARD-->
-    <div class="bg">
-        <div class="score">
-            <div class="srow">
-            </div>
-            <div class="srow">
-                <div class="scol">Names</div>
-                <div class="scol">Points</div>
-            </div>
-        </div>
-        <!--SCOREBOARD-->
 
-        <!--OPTIONS-->
-        <div class="optMod" ng-if="optionsGame">
-            <p class="optmodal">OPTIONS</p>
-            <button class="optButton">MUSIC</button>
-            <button class="optButton">SOUND</button>
+
+<div class="marginMobile">
+    <a class="button"></a>
+    <a class="button" href="/#/game">
+        <p>PLAY</p>
+    </a>
+    <a class="button"></a>
+</div>
+
+
+
+<div class="background">
+    <div id="score" class="score">
+        <div class="srow">
+            <div class="scol">Names</div>
+            <div class="scol">Points</div>
         </div>
     </div>
-    <!--OPTIONS-->
+</div>
 
-    <!--BUTTONS-->
-    <div class="margin">
-        <div class="button"></div>
-        <a class="button" ng-click="options()">OPTIONS</a>
-        <div class="button"></div>
-    </div>
-    <!--BUTTONS-->
 
-    <div class="copyright">&#169{{date}} PHILLIP PUCKETT</div>
 
+<div class="marginMobile">
+    <div class="button"></div>
+    <a class="button" ng-click="options()">
+        <p>OPTIONS</p>
+    </a>
+    <div class="button"></div>
+</div>
+
+
+
+<div class="copyrightMobile">&#169{{date}} PHILLIP E PUCKETT</div>
+
+<div class="marginDesktop" ng-keypress="onKeypress($event)" tabindex="0">
+    <a class="button" ng-click="play()">Enter = Start Game</a>
+    <a class="button" ng-click="options()">O = Game Options</a>
 </div>
